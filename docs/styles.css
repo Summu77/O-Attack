@@ -118,3 +118,7 @@ dialog .dialog-caption[hidden] { display:none; }
 @media screen and (max-width:640px) {
   .hero { padding-block:48px; }
 }
+
+/* Match the motivation paragraph to 90% of the figure width. */
+.overview-section .section-intro { max-width:none; }
+.overview-section .section-intro > p:last-child { width:90%; margin-inline:auto; }
