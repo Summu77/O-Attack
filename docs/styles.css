@@ -153,3 +153,19 @@ dialog .dialog-caption[hidden] { display:none; }
 }
 
 .model-details h4 { margin:18px 0 12px; font-size:13px; font-weight:600; }
+
+/* A full-width insight and separate reasoning and moderation evidence. */
+.insight-copy { display:block; }
+.risk-grid { align-items:start; }
+.risk-grid article > p { min-height:0; }
+.moderation-section { background:var(--paper); }
+.moderation-results { max-width:940px; margin-inline:auto; }
+.moderation-examples { margin-top:40px; }
+#citation { background:#f3f6fb; border-block:1px solid #e5ebf3; }
+.nav-links { gap:18px; }
+@media (max-width:1200px) { .site-header .brand-note { display:none; } }
+@media (max-width:640px) {
+  .nav-links { gap:12px; justify-content:flex-start; }
+  .moderation-examples { margin-top:28px; }
+}
+@media print { #citation { background:white; } }
