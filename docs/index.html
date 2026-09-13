@@ -22,7 +22,7 @@
 <header class="site-header">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#top" aria-label="O-Attack home">O-Attack<span class="brand-note">Black-Box Adversarial Attack</span></a>
-    <div class="nav-links"><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Implications</a></div>
+    <div class="nav-links"><a href="#overview">Research Question</a><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Implications</a></div>
     <a class="nav-code" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
@@ -33,19 +33,6 @@
     <p class="hero-name">O-Attack</p>
     <h1 id="paper-title">One Attack<br>to <em>Fool Them All.</em></h1>
     <p class="paper-subtitle">Highly Transferable Black-Box Adversarial Attacks<br class="desktop-break"> on Frontier MLLMs</p>
-    <div class="hero-actions">
-      <a class="button primary" href="assets/o-attack-paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6v18h12V7l-4-4Z M14 3v5h4M9 12h6M9 16h6"/></svg> Read the paper <span aria-hidden="true">↗</span></a>
-      <a class="button secondary" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg> Code &amp; project</a>
-      <a class="text-link" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
-    </div>
-    </div>
-    <figure class="hero-figure paper-figure">
-      <button class="image-button" data-enlarge="assets/frontier-asr.webp" data-title="Figure 1 — Black-box attacks with only three CLIP surrogates" data-caption="O-Attack uses a simple ensemble of three CLIP surrogates (CLIP-B/16, CLIP-B/32, and CLIP-G/14). It achieves 77.1% average black-box ASR on 10 frontier MLLMs, substantially outperforming M-Attack (36.2%) and FOA-Attack (44.0%) with identical surrogates." aria-label="Enlarge Figure 1: attack success rates on 10 frontier models">
-        <img src="assets/frontier-asr.webp" alt="Paper Figure 1: radar chart of attack success rates on 10 frontier commercial MLLMs. O-Attack achieves 77.1% average ASR, versus 36.2% for M-Attack and 44.0% for FOA-Attack, using identical surrogate models." width="2000" height="1517" fetchpriority="high">
-      </button>
-      <figcaption>Black-box attack success rates on 10 frontier MLLMs using <strong>only three CLIP surrogates</strong>: CLIP-B/16, CLIP-B/32, and CLIP-G/14. <span class="zoom-hint">Click to enlarge ↗</span></figcaption>
-    </figure>
-    </div>
     <div class="hero-meta">
       <p class="authors">
         <span class="author"><a href="https://summu77.github.io" target="_blank" rel="noopener noreferrer">Sen Nie</a><sup>1,2</sup></span>
@@ -59,6 +46,20 @@
         <p><sup>2</sup> University of Chinese Academy of Sciences</p>
       </div>
     </div>
+    <div class="hero-actions">
+      <a class="button primary" href="assets/o-attack-paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6v18h12V7l-4-4Z M14 3v5h4M9 12h6M9 16h6"/></svg> Read the paper <span aria-hidden="true">↗</span></a>
+      <a class="button secondary" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg> Code &amp; project</a>
+      <a class="text-link" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
+    </div>
+    </div>
+    <figure class="hero-figure paper-figure">
+      <button class="image-button" data-enlarge="assets/frontier-asr.webp" data-title="Figure 1 — Black-box attacks with only three CLIP surrogates" data-caption="O-Attack uses a simple ensemble of three CLIP surrogates (CLIP-B/16, CLIP-B/32, and CLIP-G/14). It achieves 77.1% average black-box ASR on 10 frontier MLLMs, substantially outperforming M-Attack (36.2%) and FOA-Attack (44.0%) with identical surrogates." aria-label="Enlarge Figure 1: attack success rates on 10 frontier models">
+        <img src="assets/frontier-asr.webp" alt="Paper Figure 1: radar chart of attack success rates on 10 frontier commercial MLLMs. O-Attack achieves 77.1% average ASR, versus 36.2% for M-Attack and 44.0% for FOA-Attack, using identical surrogate models." width="2000" height="1517" fetchpriority="high">
+      </button>
+      <figcaption>Black-box attack success rates on 10 frontier MLLMs using <strong>only three CLIP surrogates</strong>: CLIP-B/16, CLIP-B/32, and CLIP-G/14. <span class="zoom-hint">Click to enlarge ↗</span></figcaption>
+    </figure>
+    </div>
+
   </section>
 
   <section class="overview-section" id="overview">

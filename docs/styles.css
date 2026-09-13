@@ -59,22 +59,23 @@ dialog{padding:0;border:1px solid #ccd5e2;border-radius:8px;width:min(1440px,94v
 
 }
 
-/* Keep author links and the two numbered affiliations on a full-width row. */
+/* Keep author links and numbered affiliations directly below the title. */
 .site-header .brand-note { font-size:10px; letter-spacing:.35px; }
 .hero-main { margin-top:0; }
-.hero-meta { text-align:center; margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
-.hero .hero-meta .authors { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 25px; margin:0; font-size:14px; line-height:1.8; }
+.hero-meta { text-align:left; margin-top:24px; padding-top:0; border-top:0; }
+.hero .hero-meta .authors { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:8px 16px; margin:0; font-size:13px; line-height:1.8; }
 .hero .hero-meta .authors .author { display:inline-flex; align-items:baseline; white-space:nowrap; margin:0; }
 .hero-meta .author a { color:var(--blue); text-decoration:underline; text-decoration-color:transparent; text-underline-offset:3px; transition:text-decoration-color .15s; }
 .hero-meta .author a:hover { color:var(--blue-dark); text-decoration-color:currentColor; }
 .hero-meta sup { font-size:.7em; line-height:0; vertical-align:super; color:var(--muted); }
 .hero-meta .author sup { position:relative; top:-.45em; margin-left:3px; }
-.hero .hero-meta .affiliation { font-size:12px; line-height:1.65; max-width:none; margin:10px 0 0; }
+.hero .hero-meta .affiliation { font-size:11.5px; line-height:1.65; max-width:none; margin:10px 0 0; }
+.hero-meta .affiliation p { text-wrap:balance; }
 .hero-meta .affiliation p+p { margin-top:3px; }
 
 @media(max-width:640px) {
-  .hero-meta { margin-top:22px; padding-top:18px; }
-  .hero .hero-meta .authors { font-size:13px; gap:8px 18px; }
+  .hero-meta { text-align:center; margin-top:22px; padding-top:0; }
+  .hero .hero-meta .authors { justify-content:center; font-size:13px; gap:8px 18px; }
   .hero .hero-meta .affiliation { font-size:10.5px; line-height:1.75; margin-top:12px; }
   .hero-meta .affiliation p+p { margin-top:6px; }
 }
@@ -92,4 +93,13 @@ dialog .dialog-caption[hidden] { display:none; }
   .hero-copy { max-width:none; }
   .hero-figure figcaption { font-size:11px; }
   dialog .dialog-caption { padding:12px 15px; font-size:12px; }
+}
+
+/* Give all five section links a readable second navigation row on small screens. */
+@media(max-width:640px) {
+  html { scroll-padding-top:100px; }
+  .nav { height:auto; min-height:60px; flex-wrap:wrap; row-gap:0; padding-block:10px; }
+  .nav-links { order:3; flex-basis:100%; justify-content:space-between; gap:10px; padding-top:8px; }
+  .nav-links a { font-size:11px; white-space:nowrap; }
+  .nav-links a[href="#implications"] { display:block; }
 }
