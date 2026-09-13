@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O-Attack — One Attack to Fool Them All</title>
+  <meta name="description" content="O-Attack: highly transferable black-box adversarial attacks on frontier MLLMs through cross-modal semantic space anchoring, progressive sampling, and semantic consensus.">
+  <meta name="theme-color" content="#2454c6">
+  <meta property="og:title" content="O-Attack: One Attack to Fool Them All">
+  <meta property="og:description" content="A shared semantic space. A single adversarial image. Transfer across models and prompts. Explore the paper, method, and results across 24 MLLMs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://summu77.github.io/O-Attack/">
+  <meta property="og:image" content="https://summu77.github.io/O-Attack/assets/social-preview.png">
+  <link rel="canonical" href="https://summu77.github.io/O-Attack/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="assets/results.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#overview">Skip to research overview</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="O-Attack home"><span class="brand-mark" aria-hidden="true">O</span> O-Attack<span class="brand-note">RESEARCH</span></a>
+    <div class="nav-links"><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Implications</a></div>
+    <a class="nav-code" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero wrap" aria-labelledby="paper-title">
+    <div class="eyebrow"><span class="small-line"></span> MULTIMODAL LEARNING &amp; ADVERSARIAL ROBUSTNESS</div>
+    <p class="hero-name">O-Attack</p>
+    <h1 id="paper-title">One Attack<br>to <em>Fool Them All.</em></h1>
+    <p class="paper-subtitle">Highly Transferable Black-Box Adversarial Attacks<br class="desktop-break"> on Frontier MLLMs</p>
+    <p class="authors">Sen Nie <span>·</span> Jie Zhang <span>·</span> Zhongqi Wang <span>·</span> Shiguang Shan <span>·</span> Xilin Chen</p>
+    <p class="affiliation">State Key Laboratory of AI Safety, Institute of Computing Technology,<br>Chinese Academy of Sciences &amp; University of Chinese Academy of Sciences</p>
+    <div class="hero-actions">
+      <a class="button primary" href="assets/o-attack-paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3H6v18h12V7l-4-4Z M14 3v5h4M9 12h6M9 16h6"/></svg> Read the paper <span aria-hidden="true">↗</span></a>
+      <a class="button secondary" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg> Code &amp; project</a>
+      <a class="text-link" href="#citation">Cite this work <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-stats" aria-label="Key experimental results">
+      <div><strong>24</strong><span>MLLMs evaluated</span></div>
+      <div><strong>77.1<span>%</span></strong><span>ASR on 10 frontier models</span></div>
+      <div><strong>+11.6<span> pp</span></strong><span>over the strongest baseline</span></div>
+      <div><strong>3</strong><span>surrogate models</span></div>
+    </div>
+  </section>
+
+  <section class="overview-section" id="overview">
+    <div class="wrap">
+      <div class="section-intro centered"><p class="eyebrow">THE RESEARCH QUESTION</p><h2>Can one adversarial image<br>mislead different frontier models?</h2><p>O-Attack studies this question in the black-box setting. Small image perturbations, optimized on accessible surrogate models, transfer to unseen MLLMs and redirect their responses toward a target scene—even under different prompts.</p></div>
+      <figure class="paper-figure teaser"><button class="image-button" data-enlarge="assets/transfer-example.webp" data-title="A single adversarial image transfers across models and prompts" aria-label="Enlarge the cross-model and cross-prompt example"><img src="assets/transfer-example.webp" alt="The same adversarial query image elicits market-scene descriptions from six MLLMs under description, insect-identification, and fruit-identification prompts." width="2400" height="844"></button><figcaption><span class="figure-index">01 / IN PRACTICE</span> One adversarial image, six frontier MLLMs, and varied prompts. Responses consistently align with the target market scene. <span class="zoom-hint">Click any figure to enlarge ↗</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section wrap" id="insight">
+    <div class="section-heading"><p class="eyebrow">01 — THE INSIGHT</p><h2>Look beyond the final layer.</h2></div>
+    <div class="insight-copy"><p class="lead">Surrogate models contain a <strong>broad, high-level, cross-modally aligned semantic space</strong> spanning late visual and textual layers.</p><div><p>Existing transfer attacks typically rely on final-layer surrogate features. Our CKA analysis reveals that alignment extends across a contiguous region of late layers; some non-final representations also show stronger similarity to victim models than final outputs.</p><p>This motivates using an aligned subset of late layers for cross-modal optimization, distinct from aggregating representations across the full depth of a single modality.</p></div></div>
+    <figure class="paper-figure"><button class="image-button" data-enlarge="assets/cka-analysis.webp" data-title="Layer-wise CKA analysis" aria-label="Enlarge CKA analysis"><img src="assets/cka-analysis.webp" alt="CKA heatmaps showing stable intra-modal geometry, cross-modal alignment in late layers, and surrogate–victim similarity beyond final layers." loading="lazy" width="2400" height="812"></button><figcaption><span class="figure-index">02 / REPRESENTATIONAL EVIDENCE</span> CKA compares representational geometry across layers, modalities, and models. Late-layer alignment provides a broader basis for adversarial transfer.</figcaption></figure>
+  </section>
+
+  <section class="method-section section" id="method">
+    <div class="wrap"><div class="section-heading"><p class="eyebrow">02 — THE METHOD</p><h2>Anchor. Explore. Reach consensus.</h2><p>O-Attack turns this insight into three complementary stages, using frozen surrogate encoders with standard data augmentation and ensembling.</p></div>
+      <div class="stages">
+        <article><span class="stage-number">I <span>CSA</span></span><h3>Anchor the semantic space</h3><p>Use CKA trajectories to select stable late visual and textual layers. Project their representations into each surrogate’s shared embedding space.</p></article>
+        <article><span class="stage-number">II <span>PSS</span></span><h3>Explore semantic conditions</h3><p>Progressively widen the range of sampled dropout probabilities, moving from stable alignment to more diverse stochastic surrogate representations.</p></article>
+        <article><span class="stage-number">III <span>SCO</span></span><h3>Optimize for consensus</h3><p>Average alignment scores over anchor layers, then maximize their mean and penalize their variance across surrogate models and augmented views.</p></article>
+      </div>
+      <figure class="paper-figure"><button class="image-button" data-enlarge="assets/method.webp" data-title="The three-stage O-Attack framework" aria-label="Enlarge method overview"><img src="assets/method.webp" alt="O-Attack pipeline: CKA-based semantic space anchoring, progressive dropout sampling, and expectation–variance consensus optimization." loading="lazy" width="2400" height="830"></button><figcaption><span class="figure-index">03 / FRAMEWORK</span> Cross-Modal Semantic Space Anchoring → Progressive Semantic Space Sampling → Semantic Consensus Optimization.</figcaption></figure>
+      <p class="method-note"><strong>Optimization principle</strong><span>High target alignment + low disagreement across sampled conditions.</span><a href="assets/o-attack-paper.pdf#page=5" target="_blank" rel="noopener">Formal formulation ↗</a></p>
+    </div>
+  </section>
+
+  <section class="section wrap" id="results">
+    <div class="section-heading"><p class="eyebrow">03 — THE RESULTS</p><h2>Stronger transfer. The same surrogates.</h2><p>With exactly the same CLIP-B/16, CLIP-B/32, and CLIP-G/14 surrogates as M-Attack, O-Attack substantially improves black-box attack success.</p></div>
+    <div class="model-gains">
+      <article><div class="model-name"><img src="assets/gpt.webp" alt="" width="24" height="24">GPT-5.4</div><p class="gain-numbers"><span>29.1</span><span class="gain-arrow">→</span><strong>77.2<small>%</small></strong></p><div class="gain-track"><i style="width:77.2%"></i><b style="width:29.1%"></b></div><p class="gain-caption">+48.1 percentage points</p></article>
+      <article><div class="model-name"><img src="assets/claude.webp" alt="" width="24" height="24">Claude-4.6</div><p class="gain-numbers"><span>42.8</span><span class="gain-arrow">→</span><strong>81.6<small>%</small></strong></p><div class="gain-track"><i style="width:81.6%"></i><b style="width:42.8%"></b></div><p class="gain-caption">+38.8 percentage points</p></article>
+      <article><div class="model-name"><img src="assets/gemini.webp" alt="" width="24" height="24">Gemini-3.1</div><p class="gain-numbers"><span>38.2</span><span class="gain-arrow">→</span><strong>80.9<small>%</small></strong></p><div class="gain-track"><i style="width:80.9%"></i><b style="width:38.2%"></b></div><p class="gain-caption">+42.7 percentage points</p></article>
+    </div>
+    <p class="small-note gain-legend"><span class="legend-dot baseline"></span>M-Attack<span class="legend-dot ours"></span>O-Attack <span>ASR (%) · Same three surrogate models</span></p>
+    <div class="benchmark">
+      <div class="benchmark-heading"><div><h3>Across 24 MLLMs</h3><p>Compared with six state-of-the-art methods.</p></div><a class="text-link" href="assets/results.json" download>Download results ↓</a></div>
+      <div class="result-controls"><div class="segmented" role="group" aria-label="Model group"><button data-group="commercial" aria-pressed="true">10 frontier commercial MLLMs</button><button data-group="widely" aria-pressed="false">14 widely used MLLMs</button></div><div class="segmented metric-switch" role="group" aria-label="Evaluation metric"><button data-metric="0" aria-pressed="true">ASR</button><button data-metric="1" aria-pressed="false">AvgSim</button></div></div>
+      <div class="chart-header"><span id="chart-label">Average attack success rate (%) ↑</span><span id="chart-gain">+11.6 pp over the strongest baseline</span></div>
+      <div class="benchmark-chart" id="benchmark-chart" aria-label="Average results by attack method"></div>
+      <p class="small-note" id="metric-note">ASR is the percentage of samples with GPTScore &gt; 0.5. Higher values indicate stronger attacks.</p>
+      <details class="model-details"><summary>Explore results for each model <span aria-hidden="true">+</span></summary><div class="table-scroll" tabindex="0" role="region" aria-label="Per-model results"><table id="model-table"><caption id="model-table-caption">Per-model attack success rates (%)</caption><thead></thead><tbody></tbody></table></div></details>
+      <noscript><p>Average ASR: O-Attack achieves 77.1% on 10 frontier commercial MLLMs and 81.7% on 14 widely used MLLMs, compared with the strongest baselines at 65.5% and 71.5%. <a href="assets/results.json">Download all Table 1 results.</a></p></noscript>
+      <p class="settings-note">Default evaluation: ℓ∞ budget 16/255 · 300 optimization steps · Source images from NIPS 2017, target images from MSCOCO. Values are those reported in the paper.</p>
+    </div>
+  </section>
+
+  <section class="section extension-section"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">04 — BEYOND A SINGLE SETTING</p><h2>Across prompts and perturbation budgets.</h2></div>
+    <div class="two-column evidence-grid">
+      <article class="evidence"><p class="mini-label">CROSS-PROMPT TRANSFER · VQA v2.0</p><h3>Different questions.<br>Persistent semantic errors.</h3><p>Adversarial images optimized for semantic transfer also reduce question-answering accuracy across six frontier commercial MLLMs.</p><div class="paired-stats"><div><span>Soft accuracy ↓</span><strong>60.7 <i>→</i> 16.1<small>%</small></strong></div><div><span>Exact match ↓</span><strong>50.3 <i>→</i> 12.1<small>%</small></strong></div></div><p class="small-note">Clean images → O-Attack. Lower accuracy indicates a stronger attack. The same source images are evaluated with sampled associated questions.</p></article>
+      <article class="evidence"><p class="mini-label">CONSTRAINED PERTURBATIONS</p><h3>More effective at the same budget.</h3><table class="compact-table"><caption class="visually-hidden">Average ASR on six frontier commercial MLLMs</caption><thead><tr><th scope="col">ℓ∞ budget</th><th scope="col">Best baseline</th><th scope="col">O-Attack</th></tr></thead><tbody><tr><th scope="row">8/255</th><td>34.3%</td><td class="best">47.7%</td></tr><tr><th scope="row">12/255</th><td>60.2%</td><td class="best">67.3%</td></tr><tr><th scope="row">16/255</th><td>69.7%</td><td class="best">81.4%</td></tr></tbody></table><p>At 12/255, O-Attack approaches the strongest baseline at 16/255, with a <strong>25% smaller perturbation budget</strong>. Increasing the budget further strengthens target alignment.</p><p class="small-note">Average ASR on six frontier commercial MLLMs; the strongest baseline is selected at each budget.</p></article>
+    </div>
+    <details class="figure-details"><summary>Inspect adversarial images and their perturbation textures <span aria-hidden="true">+</span></summary><div class="two-column"><figure class="paper-figure"><button class="image-button" data-enlarge="assets/adversarial-images.webp" data-title="Source and adversarial images" aria-label="Enlarge adversarial images"><img src="assets/adversarial-images.webp" loading="lazy" alt="Source images and adversarial images generated by AnyAttack, M-Attack, FOA-Attack, and O-Attack." width="2400" height="1337"></button><figcaption>Source images and adversarial examples.</figcaption></figure><figure class="paper-figure"><button class="image-button" data-enlarge="assets/perturbations.webp" data-title="Target images and amplified perturbations" aria-label="Enlarge perturbation textures"><img src="assets/perturbations.webp" loading="lazy" alt="Target images and amplified perturbations; O-Attack forms more coherent target-related structures." width="2400" height="1337"></button><figcaption>Target images and amplified perturbations.</figcaption></figure></div></details>
+  </div></section>
+
+  <section class="section wrap" id="ablations">
+    <div class="section-heading"><p class="eyebrow">05 — WHAT MAKES IT WORK</p><h2>Complementary components.<br>A favorable efficiency trade-off.</h2></div>
+    <div class="two-column ablation-grid"><div><p>Each stage contributes to transferability. On six frontier commercial MLLMs, removing progressive sampling or textual anchoring reduces average ASR.</p><div class="ablation-row"><span>Full O-Attack</span><strong>81.4%</strong></div><div class="ablation-row"><span>Without progressive sampling</span><strong>71.2%</strong></div><div class="ablation-row"><span>Without textual anchoring</span><strong>64.2%</strong></div><div class="ablation-row"><span>Consensus optimization alone</span><strong>59.8%</strong></div></div>
+    <div class="efficiency-panel"><p class="mini-label">THREE SURROGATES · ONE RTX 4090</p><p class="efficiency-number">≈245<span> seconds / image</span></p><p>With 10 augmented views, O-Attack reaches <strong>81.4% ASR</strong>, versus 69.2% for M-Attack-V2 (≈283 s) and 46.2% for FOA-Attack (≈284 s).</p><p>With only three views, it reaches 71.7% ASR using three surrogates, exceeding MPCAttack’s 69.7% with six surrogates.</p><a class="text-link" href="assets/o-attack-paper.pdf#page=9" target="_blank" rel="noopener">All component, surrogate, crop, and dropout ablations ↗</a></div></div>
+  </section>
+
+  <section class="section risk-section" id="implications"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">06 — PRACTICAL IMPLICATIONS</p><h2>More reasoning is not<br>a reliable defense.</h2><p>Increasing inference-time reasoning effort does not consistently mitigate the attack and can amplify the induced semantic errors. Shared vulnerabilities also extend to safety-critical image moderation.</p></div>
+    <div class="two-column risk-grid"><article><h3>Reasoning effort</h3><p>On GPT-5.5, high-effort reasoning raises O-Attack’s ASR from <strong>64% to 70%</strong> and AvgSim from <strong>0.601 to 0.649</strong>, compared with no reasoning.</p><figure class="paper-figure"><button class="image-button" data-enlarge="assets/reasoning-effort.webp" data-title="Attack effectiveness across reasoning-effort levels" aria-label="Enlarge reasoning effort results"><img src="assets/reasoning-effort.webp" alt="ASR and AvgSim for O-Attack and MPCAttack across five reasoning-effort levels on GPT-5.5 and Claude Opus 4.8." loading="lazy" width="1800" height="361"></button><figcaption>Additional reasoning does not consistently reduce attack effectiveness.</figcaption></figure><details class="figure-details"><summary>A concrete failure under high-effort reasoning <span aria-hidden="true">+</span></summary><figure class="paper-figure"><button class="image-button" data-enlarge="assets/reasoning-example.webp" data-title="The same attack fails without reasoning but succeeds with high effort" aria-label="Enlarge reasoning example"><img src="assets/reasoning-example.webp" alt="The same adversarial image elicits a source-aligned description without reasoning but a target-aligned description under high-effort reasoning." loading="lazy" width="2400" height="1914"></button><figcaption>One adversarial image: the attack fails without reasoning and succeeds under high effort.</figcaption></figure></details></article>
+    <article><h3>Safety-critical image moderation</h3><p>On UnsafeBench, adversarial perturbations cause unsafe images to be judged safe. Average detection rates across four categories fall from <strong>76.3% to 9.1%</strong> on GPT-5.5 and <strong>65.7% to 1.0%</strong> on Claude Opus 4.8.</p><figure class="paper-figure"><button class="image-button" data-enlarge="assets/moderation.webp" data-title="UnsafeBench detection rates by category" aria-label="Enlarge moderation results"><img src="assets/moderation.webp" alt="Detection rates for illegal activity, violence, sexual content, and shocking content on GPT-5.5 and Claude Opus 4.8, comparing original images, MPCAttack, and O-Attack." loading="lazy" width="2400" height="1144"></button><figcaption>Lower detection rates indicate stronger evasion of image moderation.</figcaption></figure></article></div>
+    <div class="takeaway"><span aria-hidden="true">↗</span><p>Transferable visual perturbations expose practical risks in frontier MLLMs, motivating more rigorous robustness evaluation and defenses that go beyond increasing reasoning effort.</p></div>
+  </div></section>
+
+  <section class="section wrap resources" id="citation">
+    <div class="section-heading"><p class="eyebrow">07 — PAPER &amp; RESOURCES</p><h2>Build on this work.</h2><p>Read the full methodology and experimental analysis, explore the project repository, or cite the manuscript.</p></div>
+    <div class="resource-links"><a href="assets/o-attack-paper.pdf" target="_blank" rel="noopener"><span>01</span><strong>Read the manuscript</strong><small>PDF · Main paper and references · 13 pages</small><b aria-hidden="true">↗</b></a><a href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer"><span>02</span><strong>Project repository</strong><small>Repository and release updates</small><b aria-hidden="true">↗</b></a></div>
+    <div class="citation-box"><div class="citation-head"><span>BibTeX</span><button id="copy-citation" type="button">Copy citation <span aria-hidden="true">⧉</span></button></div><pre id="bibtex">@misc{nie2026oattack,
+  title  = {One Attack to Fool Them All: Highly Transferable
+            Black-Box Adversarial Attacks on Frontier MLLMs},
+  author = {Nie, Sen and Zhang, Jie and Wang, Zhongqi
+            and Shan, Shiguang and Chen, Xilin},
+  year   = {2026},
+  url    = {https://github.com/Summu77/O-Attack}
+}</pre><p id="copy-status" class="visually-hidden" role="status"></p></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">O</span> O-Attack</a><p>One Attack to Fool Them All.<br><span>Institute of Computing Technology, Chinese Academy of Sciences</span></p><a class="text-link" href="#top">Back to top ↑</a></div></footer>
+<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="dialog-toolbar"><h2 id="figure-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">✕</button></div><div class="dialog-image"><img id="enlarged-figure" alt=""></div><p>Scroll to inspect the full image · Press Esc to close</p></dialog>
+</body>
+</html>
