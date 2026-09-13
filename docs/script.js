@@ -1,14 +1,17 @@
 (() => {
   'use strict';
   const data = window.OATTACK_RESULTS;
-  let group = 'commercial';
+  const models = data ? [...data.commercial, ...data.widely] : [];
+  const averages = data ? data.methods.flatMap((_, i) => [0, 1].map(metric =>
+    models.reduce((sum, model) => sum + model.values[i * 2 + metric], 0) / models.length
+  )) : [];
   let metric = 0;
   const number = value => metric === 0 ? value.toFixed(1) + '%' : value.toFixed(3);
   function renderResults() {
-    const values = data.averages[group];
+    const values = averages;
     const baseline = Math.max(...values.filter((_, i) => i % 2 === metric && i < 12));
     const improvement = values[12 + metric] - baseline;
-    document.getElementById('chart-label').textContent = metric === 0 ? 'Average attack success rate (%) ↑' : 'Average semantic similarity ↑';
+    document.getElementById('chart-label').textContent = metric === 0 ? 'Mean ASR across 24 models (%) ↑' : 'Mean AvgSim across 24 models ↑';
     document.getElementById('chart-gain').textContent = (metric === 0 ? '+' + improvement.toFixed(1) + ' pp' : '+' + improvement.toFixed(3)) + ' over the strongest baseline';
     document.getElementById('metric-note').textContent = metric === 0 ? 'ASR is the percentage of samples with GPTScore > 0.5. Higher values indicate stronger attacks.' : 'AvgSim is the mean GPTScore across samples. Higher values indicate stronger semantic alignment with the target.';
     const chart = document.getElementById('benchmark-chart');
@@ -26,20 +29,15 @@
     const head = document.createElement('tr');
     ['Model', ...data.methods].forEach((name, i) => { const th = document.createElement('th'); th.scope = 'col'; th.textContent = name; if (i === 7) th.className = 'best'; head.append(th); });
     table.tHead.replaceChildren(head);
-    const rows = [...data[group], {model: 'Average (' + data[group].length + ')', values}];
+    const rows = [...models, {model: 'Average (24 models)', values}];
     table.tBodies[0].replaceChildren(...rows.map((item, n) => {
       const row = document.createElement('tr'); if (n === rows.length - 1) row.className = 'average-row';
       const label = document.createElement('th'); label.scope = 'row'; label.textContent = item.model; row.append(label);
       data.methods.forEach((_, i) => { const cell = document.createElement('td'); cell.textContent = number(item.values[i * 2 + metric]); if (i === 6) cell.className = 'best'; row.append(cell); });
       return row;
     }));
-    document.getElementById('model-table-caption').textContent = (group === 'commercial' ? '10 frontier commercial MLLMs' : '14 widely used MLLMs') + ' · ' + (metric === 0 ? 'ASR (%) ↑' : 'AvgSim ↑') + ' · Paper, Table 1';
+    document.getElementById('model-table-caption').textContent = 'All 24 MLLMs' + ' · ' + (metric === 0 ? 'ASR (%) ↑' : 'AvgSim ↑') + ' · Paper, Table 1';
   }
-  document.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => {
-    group = button.dataset.group;
-    document.querySelectorAll('[data-group]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
-    renderResults();
-  }));
   document.querySelectorAll('[data-metric]').forEach(button => button.addEventListener('click', () => {
     metric = Number(button.dataset.metric);
     document.querySelectorAll('[data-metric]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));

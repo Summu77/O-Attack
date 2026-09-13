@@ -96,13 +96,13 @@
     <p class="small-note gain-legend"><span class="legend-dot baseline"></span>M-Attack<span class="legend-dot ours"></span>O-Attack <span>ASR (%) · Same three surrogate models</span></p>
     <div class="benchmark">
       <div class="benchmark-heading"><div><h3>Across 24 MLLMs</h3><p>Compared with six state-of-the-art methods.</p></div><a class="text-link" href="assets/results.json" download>Download results ↓</a></div>
-      <div class="result-controls"><div class="segmented" role="group" aria-label="Model group"><button data-group="commercial" aria-pressed="true">10 frontier commercial MLLMs</button><button data-group="widely" aria-pressed="false">14 widely used MLLMs</button></div><div class="segmented metric-switch" role="group" aria-label="Evaluation metric"><button data-metric="0" aria-pressed="true">ASR</button><button data-metric="1" aria-pressed="false">AvgSim</button></div></div>
-      <div class="chart-header"><span id="chart-label">Average attack success rate (%) ↑</span><span id="chart-gain">+11.6 pp over the strongest baseline</span></div>
+      <div class="result-controls"><div class="segmented metric-switch" role="group" aria-label="Evaluation metric"><button data-metric="0" aria-pressed="true">ASR</button><button data-metric="1" aria-pressed="false">AvgSim</button></div></div>
+      <div class="chart-header"><span id="chart-label">Mean ASR across 24 models (%) ↑</span><span id="chart-gain"></span></div>
       <div class="benchmark-chart" id="benchmark-chart" aria-label="Average results by attack method"></div>
       <p class="small-note" id="metric-note">ASR is the percentage of samples with GPTScore &gt; 0.5. Higher values indicate stronger attacks.</p>
-      <details class="model-details"><summary>Explore results for each model <span aria-hidden="true">+</span></summary><div class="table-scroll" tabindex="0" role="region" aria-label="Per-model results"><table id="model-table"><caption id="model-table-caption">Per-model attack success rates (%)</caption><thead></thead><tbody></tbody></table></div></details>
-      <noscript><p>Average ASR: O-Attack achieves 77.1% on 10 frontier commercial MLLMs and 81.7% on 14 widely used MLLMs, compared with the strongest baselines at 65.5% and 71.5%. <a href="assets/results.json">Download all Table 1 results.</a></p></noscript>
-      <p class="settings-note">Default evaluation: ℓ∞ budget 16/255 · 300 optimization steps · Source images from NIPS 2017, target images from MSCOCO. Values are those reported in the paper.</p>
+      <div class="model-details"><h4>Results for all 24 models</h4><div class="table-scroll" tabindex="0" role="region" aria-label="Per-model results"><table id="model-table"><caption id="model-table-caption">Per-model attack success rates (%)</caption><thead></thead><tbody></tbody></table></div></div>
+      <noscript><p>Enable JavaScript to view the interactive results, or <a href="assets/results.json">download results for all 24 models.</a></p></noscript>
+      <p class="settings-note">Default evaluation: ℓ∞ budget 16/255 · 300 optimization steps · Source images from NIPS 2017, target images from MSCOCO. Per-model values are reported in the paper; overall averages are computed as the arithmetic mean across all 24 models.</p>
     </div>
   </section>
 

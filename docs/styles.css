@@ -151,3 +151,5 @@ dialog .dialog-caption[hidden] { display:none; }
 @media print {
   .motivation-section, .method-section, .extension-section, .risk-section { background:white; }
 }
+
+.model-details h4 { margin:18px 0 12px; font-size:13px; font-weight:600; }
