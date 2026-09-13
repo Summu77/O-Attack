@@ -52,6 +52,11 @@
     const img = document.getElementById('enlarged-figure');
     img.src = button.dataset.enlarge; img.alt = button.querySelector('img').alt;
     document.getElementById('figure-title').textContent = button.dataset.title;
+    const caption = document.getElementById('figure-caption');
+    caption.textContent = button.dataset.caption || '';
+    caption.hidden = !caption.textContent;
+    if (caption.hidden) dialog.removeAttribute('aria-describedby');
+    else dialog.setAttribute('aria-describedby', 'figure-caption');
     dialog.showModal(); document.body.classList.add('modal-open');
   }));
   document.getElementById('close-figure').addEventListener('click', () => dialog.close());

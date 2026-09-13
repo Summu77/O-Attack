@@ -40,10 +40,10 @@
     </div>
     </div>
     <figure class="hero-figure paper-figure">
-      <button class="image-button" data-enlarge="assets/frontier-asr.webp" data-title="Figure 1 — Black-box transfer with identical surrogate models" aria-label="Enlarge Figure 1: attack success rates on 10 frontier models">
+      <button class="image-button" data-enlarge="assets/frontier-asr.webp" data-title="Figure 1 — Black-box attacks with only three CLIP surrogates" data-caption="O-Attack uses a simple ensemble of three CLIP surrogates (CLIP-B/16, CLIP-B/32, and CLIP-G/14). It achieves 77.1% average black-box ASR on 10 frontier MLLMs, substantially outperforming M-Attack (36.2%) and FOA-Attack (44.0%) with identical surrogates." aria-label="Enlarge Figure 1: attack success rates on 10 frontier models">
         <img src="assets/frontier-asr.webp" alt="Paper Figure 1: radar chart of attack success rates on 10 frontier commercial MLLMs. O-Attack achieves 77.1% average ASR, versus 36.2% for M-Attack and 44.0% for FOA-Attack, using identical surrogate models." width="2000" height="1517" fetchpriority="high">
       </button>
-      <figcaption><span class="figure-index">FIGURE 1 · IDENTICAL SURROGATE MODELS</span><strong>77.1% average ASR</strong>, versus 36.2% for M-Attack and 44.0% for FOA-Attack. All three methods use CLIP-B/16, CLIP-B/32, and CLIP-G/14. <span class="zoom-hint">Click to enlarge ↗</span></figcaption>
+      <figcaption>Black-box attack success rates on 10 frontier MLLMs using <strong>only three CLIP surrogates</strong>: CLIP-B/16, CLIP-B/32, and CLIP-G/14. <span class="zoom-hint">Click to enlarge ↗</span></figcaption>
     </figure>
     </div>
     <div class="hero-meta">
@@ -58,12 +58,6 @@
         <p><sup>1</sup> State Key Laboratory of AI Safety, Institute of Computing Technology, Chinese Academy of Sciences</p>
         <p><sup>2</sup> University of Chinese Academy of Sciences</p>
       </div>
-    </div>
-    <div class="hero-stats" aria-label="Key experimental results">
-      <div><strong>24</strong><span>MLLMs evaluated</span></div>
-      <div><strong>77.1<span>%</span></strong><span>ASR on 10 frontier models</span></div>
-      <div><strong>+11.6<span> pp</span></strong><span>over the strongest baseline</span></div>
-      <div><strong>3</strong><span>surrogate models</span></div>
     </div>
   </section>
 
@@ -148,6 +142,6 @@
   </section>
 </main>
 <footer class="site-footer"><div class="wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">O</span> O-Attack</a><p>One Attack to Fool Them All.<br><span>Institute of Computing Technology, Chinese Academy of Sciences</span></p><a class="text-link" href="#top">Back to top ↑</a></div></footer>
-<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="dialog-toolbar"><h2 id="figure-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">✕</button></div><div class="dialog-image"><img id="enlarged-figure" alt=""></div><p>Scroll to inspect the full image · Press Esc to close</p></dialog>
+<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="dialog-toolbar"><h2 id="figure-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">✕</button></div><div class="dialog-image"><img id="enlarged-figure" alt=""></div><p id="figure-caption" class="dialog-caption" hidden></p><p class="dialog-hint">Scroll to inspect the full image · Press Esc to close</p></dialog>
 </body>
 </html>
