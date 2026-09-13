@@ -103,3 +103,18 @@ dialog .dialog-caption[hidden] { display:none; }
   .nav-links a { font-size:11px; white-space:nowrap; }
   .nav-links a[href="#implications"] { display:block; }
 }
+
+/* Reserve the first viewport for the paper introduction, without scaling its content. */
+@media screen and (min-width:641px) {
+  .hero {
+    min-height:calc(100vh - 73px);
+    min-height:calc(100svh - 73px);
+    display:flex;
+    align-items:center;
+    padding-block:clamp(56px, 8vh, 112px);
+  }
+  .hero-main { width:100%; }
+}
+@media screen and (max-width:640px) {
+  .hero { padding-block:48px; }
+}
