@@ -122,3 +122,12 @@ dialog .dialog-caption[hidden] { display:none; }
 /* Match the motivation paragraph to 90% of the figure width. */
 .overview-section .section-intro { max-width:none; }
 .overview-section .section-intro > p:last-child { width:90%; margin-inline:auto; }
+
+/* Keep the primary affiliation on one line within the desktop title column. */
+@media (min-width:901px) {
+  .hero .hero-meta .affiliation { container-type:inline-size; }
+  .hero-meta .affiliation p:first-child {
+    font-size:min(11.5px, 2.05cqw);
+    white-space:nowrap;
+  }
+}
