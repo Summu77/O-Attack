@@ -22,12 +22,12 @@
 <header class="site-header">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#top" aria-label="O-Attack home">O-Attack<span class="brand-note">Black-Box Adversarial Attack</span></a>
-    <div class="nav-links"><a href="#overview">Motivation</a><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Implications</a></div>
+    <div class="nav-links"><a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Implications</a></div>
     <a class="nav-code" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 <main id="top">
-  <section class="hero wrap" aria-labelledby="paper-title">
+  <section class="hero wrap" id="overview" aria-labelledby="paper-title">
     <div class="hero-main">
     <div class="hero-copy">
     <h1 id="paper-title">One Attack<br>to <em>Fool Them All.</em></h1>
@@ -61,7 +61,7 @@
 
   </section>
 
-  <section class="overview-section" id="overview">
+  <section class="motivation-section" id="motivation">
     <div class="wrap">
       <div class="section-intro centered"><p class="eyebrow">MOTIVATION</p><h2>Can one adversarial image<br>mislead diverse frontier models?</h2><p>Adversarial attacks have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing their vulnerability to such attacks is essential for their safe use. In this work, we investigate whether a single adversarial image can consistently mislead diverse frontier MLLMs in black-box settings.</p></div>
       <figure class="paper-figure teaser"><button class="image-button" data-enlarge="assets/transfer-example.webp" data-title="O-Attack: a single adversarial image transfers across models and prompts" aria-label="Enlarge the cross-model and cross-prompt example"><img src="assets/transfer-example.webp" alt="The same adversarial query image elicits market-scene descriptions from six MLLMs under description, insect-identification, and fruit-identification prompts." width="2400" height="844"></button><figcaption><span class="figure-index">01 / IN PRACTICE</span> An example of O-Attack: a single adversarial image elicits responses aligned with the target market scene from six frontier MLLMs under varied prompts. <span class="zoom-hint">Click any figure to enlarge ↗</span></figcaption></figure>
