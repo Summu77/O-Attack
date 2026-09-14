@@ -202,3 +202,5 @@ dialog .dialog-caption[hidden] { display:none; }
   }
   .moderation-grid figcaption { margin-top:0; }
 }
+
+.citation-pending { padding:24px; color:var(--muted); font-size:14px; }

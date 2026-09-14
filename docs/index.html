@@ -22,7 +22,7 @@
 <header class="site-header">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#top" aria-label="O-Attack home">O-Attack<span class="brand-note">Black-Box Adversarial Attack</span></a>
-    <div class="nav-links"><a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a><a href="#implications">Reasoning</a><a href="#moderation">Moderation</a></div>
+    <div class="nav-links"><a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#insight">Insight</a><a href="#method">Method</a><a href="#results">Results</a></div>
     <a class="nav-code" href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
@@ -106,16 +106,16 @@
     </div>
   </section>
 
-  <section class="section risk-section" id="implications"><div class="wrap">
+  <section class="section risk-section" id="implications" data-nav-target="results"><div class="wrap">
 
     <div class="two-column risk-grid reasoning-layout">
-      <article class="reasoning-summary"><div class="section-heading"><p class="eyebrow">04 — REASONING ROBUSTNESS</p><h2>More reasoning is not<br>a reliable defense.</h2><p>Increasing inference-time reasoning effort does not consistently mitigate the attack and can amplify the induced semantic errors.</p></div><h3>Effect of reasoning effort</h3><p>On GPT-5.5, high-effort reasoning raises O-Attack’s ASR from <strong>64% to 70%</strong> and AvgSim from <strong>0.601 to 0.649</strong>, compared with no reasoning.</p><figure class="paper-figure"><button class="image-button" data-enlarge="assets/reasoning-effort.webp" data-title="Attack effectiveness across reasoning-effort levels" aria-label="Enlarge reasoning effort results"><img src="assets/reasoning-effort.webp" alt="ASR and AvgSim for O-Attack and MPCAttack across five reasoning-effort levels on GPT-5.5 and Claude Opus 4.8." loading="lazy" width="1800" height="361"></button><figcaption>Additional reasoning does not consistently reduce O-Attack’s effectiveness.</figcaption></figure></article>
+      <article class="reasoning-summary"><div class="section-heading"><p class="eyebrow">03 — RESULTS · REASONING ROBUSTNESS</p><h2>More reasoning is not<br>a reliable defense.</h2><p>Increasing inference-time reasoning effort does not consistently mitigate the attack and can amplify the induced semantic errors.</p></div><h3>Effect of reasoning effort</h3><p>On GPT-5.5, high-effort reasoning raises O-Attack’s ASR from <strong>64% to 70%</strong> and AvgSim from <strong>0.601 to 0.649</strong>, compared with no reasoning.</p><figure class="paper-figure"><button class="image-button" data-enlarge="assets/reasoning-effort.webp" data-title="Attack effectiveness across reasoning-effort levels" aria-label="Enlarge reasoning effort results"><img src="assets/reasoning-effort.webp" alt="ASR and AvgSim for O-Attack and MPCAttack across five reasoning-effort levels on GPT-5.5 and Claude Opus 4.8." loading="lazy" width="1800" height="361"></button><figcaption>Additional reasoning does not consistently reduce O-Attack’s effectiveness.</figcaption></figure></article>
       <article><h3>A failure under high-effort reasoning</h3><p>The same adversarial image yields a source-aligned description without reasoning, but a target-aligned description under high-effort reasoning.</p><figure class="paper-figure"><button class="image-button" data-enlarge="assets/reasoning-example.webp" data-title="The same attack fails without reasoning but succeeds with high effort" aria-label="Enlarge reasoning example"><img src="assets/reasoning-example.webp" alt="The same adversarial image elicits a source-aligned description without reasoning but a target-aligned description under high-effort reasoning." loading="lazy" width="2400" height="1914"></button><figcaption>An O-Attack example: increasing reasoning effort turns a failed attack into a successful one.</figcaption></figure></article>
     </div>
   </div></section>
 
-  <section class="section moderation-section" id="moderation"><div class="wrap">
-    <div class="section-heading"><p class="eyebrow">05 — PRACTICAL SAFETY RISKS</p><h2>Safety-critical image moderation</h2><p>On UnsafeBench, O-Attack causes unsafe images to be judged safe. Average detection rates across four categories fall from <strong>76.3% to 9.1%</strong> on GPT-5.5 and <strong>65.7% to 1.0%</strong> on Claude Opus 4.8.</p></div>
+  <section class="section moderation-section" id="moderation" data-nav-target="results"><div class="wrap">
+    <div class="section-heading"><p class="eyebrow">03 — RESULTS · PRACTICAL SAFETY RISKS</p><h2>Safety-critical image moderation</h2><p>On UnsafeBench, O-Attack causes unsafe images to be judged safe. Average detection rates across four categories fall from <strong>76.3% to 9.1%</strong> on GPT-5.5 and <strong>65.7% to 1.0%</strong> on Claude Opus 4.8.</p></div>
     <div class="two-column moderation-grid">
     <figure class="paper-figure moderation-results"><button class="image-button" data-enlarge="assets/moderation.webp" data-title="UnsafeBench detection rates by category" aria-label="Enlarge moderation results"><img src="assets/moderation.webp" alt="Detection rates for illegal activity, violence, sexual content, and shocking content on GPT-5.5 and Claude Opus 4.8, comparing original images, MPCAttack, and O-Attack." loading="lazy" width="2400" height="1144"></button><figcaption>O-Attack reduces unsafe-content detection across four categories. Lower detection rates indicate stronger evasion of image moderation.</figcaption></figure>
     <figure class="paper-figure moderation-examples"><button class="image-button" data-enlarge="assets/moderation-example.webp" data-title="O-Attack: qualitative safety-moderation failures on UnsafeBench" aria-label="Enlarge safety-moderation examples"><img src="assets/moderation-example.webp" alt="O-Attack examples across illegal activity, shocking, sexual, and violent content: GPT-5.5 and Claude Opus 4.8 incorrectly classify unsafe images as safe and justify their decisions with benign scene descriptions. Sensitive regions are masked." loading="lazy" width="2400" height="997"></button><figcaption>O-Attack induces false safe judgments supported by benign scene descriptions across all four categories. Sensitive regions are masked for presentation.</figcaption></figure>
@@ -124,16 +124,9 @@
   </div></section>
 
   <section class="section resources" id="citation"><div class="wrap">
-    <div class="section-heading"><p class="eyebrow">06 — PAPER &amp; RESOURCES</p><h2>Build on this work.</h2></div>
+    <div class="section-heading"><p class="eyebrow">04 — PAPER &amp; RESOURCES</p><h2>Build on this work.</h2></div>
     <div class="resource-links"><a href="assets/o-attack-paper.pdf" target="_blank" rel="noopener"><span>01</span><strong>Read the manuscript</strong><small>PDF · Main paper and references · 13 pages</small><b aria-hidden="true">↗</b></a><a href="https://github.com/Summu77/O-Attack" target="_blank" rel="noopener noreferrer"><span>02</span><strong>Project repository</strong><small>Repository and release updates</small><b aria-hidden="true">↗</b></a></div>
-    <div class="citation-box"><div class="citation-head"><span>BibTeX</span><button id="copy-citation" type="button">Copy citation <span aria-hidden="true">⧉</span></button></div><pre id="bibtex">@misc{nie2026oattack,
-  title  = {One Attack to Fool Them All: Highly Transferable
-            Black-Box Adversarial Attacks on Frontier MLLMs},
-  author = {Nie, Sen and Zhang, Jie and Wang, Zhongqi
-            and Shan, Shiguang and Chen, Xilin},
-  year   = {2026},
-  url    = {https://github.com/Summu77/O-Attack}
-}</pre><p id="copy-status" class="visually-hidden" role="status"></p></div>
+    <div class="citation-box"><div class="citation-head"><span>BibTeX</span></div><p class="citation-pending">Coming soon.</p></div>
   </div></section>
 </main>
 <dialog id="figure-dialog" aria-labelledby="figure-title"><div class="dialog-toolbar"><h2 id="figure-title">Figure</h2><button id="close-figure" type="button" aria-label="Close enlarged figure">✕</button></div><div class="dialog-image"><img id="enlarged-figure" alt=""></div><p id="figure-caption" class="dialog-caption" hidden></p><p class="dialog-hint">Scroll to inspect the full image · Press Esc to close</p></dialog>

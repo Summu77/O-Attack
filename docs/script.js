@@ -61,24 +61,12 @@
   dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
   dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); });
 
-  document.getElementById('copy-citation').addEventListener('click', async () => {
-    const text = document.getElementById('bibtex').textContent;
-    const status = document.getElementById('copy-status');
-    const button = document.getElementById('copy-citation');
-    try {
-      await navigator.clipboard.writeText(text);
-      button.textContent = 'Copied ✓'; status.textContent = 'Citation copied to clipboard.';
-      setTimeout(() => { button.textContent = 'Copy citation ⧉'; }, 2500);
-    } catch {
-      const selection = window.getSelection(); const range = document.createRange(); range.selectNodeContents(document.getElementById('bibtex')); selection.removeAllRanges(); selection.addRange(range);
-      status.classList.remove('visually-hidden'); status.textContent = 'Citation selected. Press Ctrl+C or ⌘C to copy.';
-    }
-  });
   if ('IntersectionObserver' in window) {
     const navLinks = [...document.querySelectorAll('.nav-links a')];
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) navLinks.forEach(link => { if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+      if (entry.isIntersecting) navLinks.forEach(link => { if (link.hash === '#' + (entry.target.dataset.navTarget || entry.target.id)) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     }), {rootMargin: '-15% 0px -55% 0px'});
     navLinks.forEach(link => observer.observe(document.querySelector(link.hash)));
+    document.querySelectorAll('[data-nav-target]').forEach(section => observer.observe(section));
   }
 })();
