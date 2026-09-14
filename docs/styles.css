@@ -169,3 +169,15 @@ dialog .dialog-caption[hidden] { display:none; }
   .moderation-examples { margin-top:28px; }
 }
 @media print { #citation { background:white; } }
+
+/* Keep each evidence pair side by side, with the reasoning introduction in its left column. */
+.reasoning-layout { align-items:center; }
+.reasoning-summary .section-heading { margin-bottom:30px; }
+.reasoning-summary .section-heading h2 { font-size:clamp(32px, 3.2vw, 42px); }
+.moderation-grid { gap:32px; align-items:start; }
+.moderation-grid .paper-figure { min-width:0; width:100%; max-width:none; margin:0; }
+.moderation-grid .image-button { padding:14px; }
+@media (max-width:640px) {
+  .reasoning-layout, .moderation-grid { grid-template-columns:1fr; gap:32px; }
+  .reasoning-summary .section-heading h2 { font-size:32px; }
+}
