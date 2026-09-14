@@ -22,4 +22,4 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory docs
 
 Open http://127.0.0.1:8765/ in your browser.
 
-To publish, open **Settings → Pages → Deploy from a branch**, select **main** and **/docs**, and click **Save**. See the [Chinese configuration guide](GITHUB_PAGES_配置说明.md) for detailed instructions.
+To publish, open **Settings → Pages → Deploy from a branch**, select **main** and **/docs**, and click **Save**.
