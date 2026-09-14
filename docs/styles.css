@@ -181,3 +181,24 @@ dialog .dialog-caption[hidden] { display:none; }
   .reasoning-layout, .moderation-grid { grid-template-columns:1fr; gap:32px; }
   .reasoning-summary .section-heading h2 { font-size:32px; }
 }
+
+/* Use a 40:60 split with aligned image frames and captions. */
+@media (min-width:641px) {
+  .moderation-grid {
+    grid-template-columns:minmax(0, 2fr) minmax(0, 3fr);
+    align-items:stretch;
+    row-gap:14px;
+  }
+  .moderation-grid .paper-figure {
+    display:grid;
+    grid-template-rows:subgrid;
+    grid-row:span 2;
+  }
+  .moderation-grid .image-button {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+  }
+  .moderation-grid figcaption { margin-top:0; }
+}
