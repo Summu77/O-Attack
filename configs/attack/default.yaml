@@ -1,0 +1,123 @@
+seed: 2023
+output:
+  root: outputs/attack/default
+data:
+  dataset_type: folder_pairs
+  clean_root: data/images/bigscale
+  target_root: data/images/target_images
+  fixed_target_image: null
+  batch_size: 1
+  sample_start: 0
+  num_samples: 100
+model:
+  ensemble: true
+  backbones:
+  - Laion
+  - B16
+  - B32
+  input_res: 224
+  cls_last_k: 4
+  device: cuda:0
+  multi_device_strategy: model_parallel
+  stochastic_proxy: true
+  attention_dropout: 0.15
+  ffn_dropout: 0.15
+  attention_dropout_min: 0.05
+  ffn_dropout_min: 0.05
+  attention_dropout_max: 0.15
+  ffn_dropout_max: 0.15
+  dropout_schedule: true
+  dropout_sample_per_forward: true
+  backbone_overrides:
+    Laion:
+      cls_last_k: 15
+      attention_dropout_min: 0.1
+      ffn_dropout_min: 0.1
+      attention_dropout_max: 0.15
+      ffn_dropout_max: 0.15
+      attention_dropout: 0.15
+      ffn_dropout: 0.15
+    B16:
+      cls_last_k: 4
+      attention_dropout_min: 0.05
+      ffn_dropout_min: 0.05
+      attention_dropout_max: 0.1
+      ffn_dropout_max: 0.1
+      attention_dropout: 0.1
+      ffn_dropout: 0.1
+    B32:
+      cls_last_k: 4
+      attention_dropout_min: 0.05
+      ffn_dropout_min: 0.05
+      attention_dropout_max: 0.1
+      ffn_dropout_max: 0.1
+      attention_dropout: 0.1
+      ffn_dropout: 0.1
+optim:
+  attack: oattack_pgd
+  target_type: image
+  steps: 300
+  alpha: 1.0
+  epsilon: 16
+  source_aug_crops: 10
+  source_aug_aggregation: mean
+  source_aug_execution: batched
+  grad_mask_alpha: 0.0
+augmentation:
+  source:
+  - type: random_resized_crop
+    size: 224
+    scale:
+    - 0.55
+    - 0.95
+  target:
+  - type: random_resized_crop
+    size: 224
+    scale:
+    - 0.9
+    - 1.0
+text_objective:
+  enabled: true
+  alpha: 1.0
+  text_last_k: 2
+  mix_beta_min: 0.0
+  mix_beta_max: 1.0
+  attention_dropout_min: 0.05
+  attention_dropout_max: 0.15
+  ffn_dropout_min: 0.05
+  ffn_dropout_max: 0.15
+  mix_mode: pair
+  source_caption_json: data/text/bigscale/nips17/caption.json
+  target_caption_json: data/text/target_images/1/caption.json
+  backbone_overrides:
+    Laion:
+      text_last_k: 5
+      attention_dropout_min: 0.1
+      attention_dropout_max: 0.15
+      ffn_dropout_min: 0.1
+      ffn_dropout_max: 0.15
+      attention_dropout: 0.15
+      ffn_dropout: 0.15
+    B16:
+      text_last_k: 2
+      attention_dropout_min: 0.05
+      attention_dropout_max: 0.1
+      ffn_dropout_min: 0.05
+      ffn_dropout_max: 0.1
+      attention_dropout: 0.1
+      ffn_dropout: 0.1
+    B32:
+      text_last_k: 2
+      attention_dropout_min: 0.05
+      attention_dropout_max: 0.1
+      ffn_dropout_min: 0.05
+      ffn_dropout_max: 0.1
+      attention_dropout: 0.1
+      ffn_dropout: 0.1
+  attention_dropout: 0.15
+  ffn_dropout: 0.15
+oattack_objective:
+  visual_variance_weight: 1.0
+  text_variance_weight: 1.0
+  aggregation_mode: per_model_layeravg_textpooled
+  variance_mode: subtract

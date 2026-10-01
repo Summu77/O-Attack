@@ -1,0 +1,816 @@
+{
+  "schema_version": 1,
+  "dataset": "O-Attack original 100-pair G3 subset",
+  "num_pairs": 100,
+  "order": "ImageFolder lexical filename order, retained from the source implementation",
+  "source_captions": "data/text/bigscale/nips17/caption.json",
+  "target_captions": "data/text/target_images/1/caption.json",
+  "caption_sha256": {
+    "data/text/bigscale/nips17/caption.json": "b9ac7afaf8fcce8d406484852c1492de3eb9aef5f97cad6d3bcf3f5eaceb1b07",
+    "data/text/target_images/1/caption.json": "b2b161a697d381e2ef7d2dd052e78178cd2ebdac3f487e37c18da082dff4d909"
+  },
+  "pairs": [
+    {
+      "index": 0,
+      "id": 0,
+      "source_image": "data/images/bigscale/nips17/0.png",
+      "target_image": "data/images/target_images/1/0.jpg",
+      "source_sha256": "3a928c42c01c6fafe680cf64746cc222dcf350a646e632940361ad9b1bc65419",
+      "target_sha256": "740dcbb95dbb4c1cdcafe42ce1b8608618c6393b57837ac4bebf1363e0f1dfb3"
+    },
+    {
+      "index": 1,
+      "id": 1,
+      "source_image": "data/images/bigscale/nips17/1.png",
+      "target_image": "data/images/target_images/1/1.jpg",
+      "source_sha256": "c5b21530082c4385d0ba4be3640acc1870dbb290bbf5833e7548b5089d2dbe50",
+      "target_sha256": "646da4f32fc9903a9e66838c58604bf6119e215812d21a2c50833cc2653c0fb6"
+    },
+    {
+      "index": 2,
+      "id": 10,
+      "source_image": "data/images/bigscale/nips17/10.png",
+      "target_image": "data/images/target_images/1/10.jpg",
+      "source_sha256": "f152f989c0aa71fe051bc4edc44a13ecf4dece4c22b6d9249b0c99476bdf518e",
+      "target_sha256": "b77f9ad4933e0dfc6c33c9928abad6b361b5e70a7cee208d28b1dee1733375d5"
+    },
+    {
+      "index": 3,
+      "id": 11,
+      "source_image": "data/images/bigscale/nips17/11.png",
+      "target_image": "data/images/target_images/1/11.jpg",
+      "source_sha256": "f48e334da663455cb50da38548d7ad591f673342cbbd0cb416d415a714af90aa",
+      "target_sha256": "fc7340b874993625c1deb0f83aa2dca19cd460e8218b3cf532f0959f76c154d0"
+    },
+    {
+      "index": 4,
+      "id": 12,
+      "source_image": "data/images/bigscale/nips17/12.png",
+      "target_image": "data/images/target_images/1/12.jpg",
+      "source_sha256": "c34ef3b9363ad4ba1025f553c13ecd75b669191556ed2ead69ca8cb5d8d023f1",
+      "target_sha256": "f01a7fb1045303a0112033a2de11f42c340250a85e356412e5047a0853b560e1"
+    },
+    {
+      "index": 5,
+      "id": 13,
+      "source_image": "data/images/bigscale/nips17/13.png",
+      "target_image": "data/images/target_images/1/13.jpg",
+      "source_sha256": "d499ffad5d73739aaf6e3bf3e3d4d80b19432cb11ed54c34923a4f7524d853d8",
+      "target_sha256": "132ddfcfc9ebe125712b3dcc20529f51586d2d84b853308cac6e385fcea89ddb"
+    },
+    {
+      "index": 6,
+      "id": 14,
+      "source_image": "data/images/bigscale/nips17/14.png",
+      "target_image": "data/images/target_images/1/14.jpg",
+      "source_sha256": "9777b95dbb178cce9178baa03d439d6e56e0f94b5fbfa6c752515b743453dd85",
+      "target_sha256": "de0d718fe1b2a567dcde02ebfecb6380d7a64e2f8d1cdf37c904487dcdc0da6c"
+    },
+    {
+      "index": 7,
+      "id": 15,
+      "source_image": "data/images/bigscale/nips17/15.png",
+      "target_image": "data/images/target_images/1/15.jpg",
+      "source_sha256": "b4ee24ed9cd5cc76245869eab1ab20ae518f8e1b34952030778e1e451a774bbe",
+      "target_sha256": "f20ebde88daead91ccb56cf1fa12c395998c2abb3f4c0266c6534c22b3e10659"
+    },
+    {
+      "index": 8,
+      "id": 16,
+      "source_image": "data/images/bigscale/nips17/16.png",
+      "target_image": "data/images/target_images/1/16.jpg",
+      "source_sha256": "f2444e13cf8e23e348001f5468c65227222ddb1e46a92181dcb8a78572572632",
+      "target_sha256": "c78fb8726ad29dd9c2ba7dda3c5c948c88ba39323a86ade2a85ea556ea65cb86"
+    },
+    {
+      "index": 9,
+      "id": 17,
+      "source_image": "data/images/bigscale/nips17/17.png",
+      "target_image": "data/images/target_images/1/17.jpg",
+      "source_sha256": "8ec7d3331bfe6b1bcfa1c80c4622861f19a61aec22e8df9f12f44f62236e3bc5",
+      "target_sha256": "38c453dd7cd5fd01e93faf400be98c0a5fd2c10001fed12cbfef15284c48cb67"
+    },
+    {
+      "index": 10,
+      "id": 18,
+      "source_image": "data/images/bigscale/nips17/18.png",
+      "target_image": "data/images/target_images/1/18.jpg",
+      "source_sha256": "b1898db52cd83459805e7abf1b498a83165b9ce01b13186fc80d5a41f0127b24",
+      "target_sha256": "092a23b9e9aac59d0b899b670db417f5076ddffddd08a86d10d5ca211722c14c"
+    },
+    {
+      "index": 11,
+      "id": 19,
+      "source_image": "data/images/bigscale/nips17/19.png",
+      "target_image": "data/images/target_images/1/19.jpg",
+      "source_sha256": "335afcea1e54d63d5bc533d5cc5d6dd0fef53573b024e91d1381e8789c12c765",
+      "target_sha256": "faff5979e19b32c4582d71721f37826e02ea46a778dd8ac3a4d3e87f197ee097"
+    },
+    {
+      "index": 12,
+      "id": 2,
+      "source_image": "data/images/bigscale/nips17/2.png",
+      "target_image": "data/images/target_images/1/2.jpg",
+      "source_sha256": "00c9ffab938b456ca9f1758592a4d037949ae0c8a0d51cd4167efb65476fac81",
+      "target_sha256": "5ca8d083573bbd5223052f9b62917356bc8cc0f36ad1dcea240859b417247d8e"
+    },
+    {
+      "index": 13,
+      "id": 20,
+      "source_image": "data/images/bigscale/nips17/20.png",
+      "target_image": "data/images/target_images/1/20.jpg",
+      "source_sha256": "28eb97a417d23d1c9f7f480800a8258cc4fa60fe24c04cdba3f87d9584c9fe00",
+      "target_sha256": "f8fd130dfa7d7622e3987df151e4a66c761aefa88028c1880cd0d73b62936b96"
+    },
+    {
+      "index": 14,
+      "id": 21,
+      "source_image": "data/images/bigscale/nips17/21.png",
+      "target_image": "data/images/target_images/1/21.jpg",
+      "source_sha256": "cda82d2ebb2728d8fcb855a0ed7037a5cf83c3a67d678004f6b0e922bc666a5c",
+      "target_sha256": "951f08abadb599fec8cff296b9603a03ad31c5cdd7de6793c7e2aa0695936a2c"
+    },
+    {
+      "index": 15,
+      "id": 22,
+      "source_image": "data/images/bigscale/nips17/22.png",
+      "target_image": "data/images/target_images/1/22.jpg",
+      "source_sha256": "37e3f1c8f1065db957073c1018b4644d7c12bca79982075c21e699d1b80dc219",
+      "target_sha256": "74b977a708863d22b33fe68c561b5adc94f872f7377de4af71790a2e68d74f57"
+    },
+    {
+      "index": 16,
+      "id": 23,
+      "source_image": "data/images/bigscale/nips17/23.png",
+      "target_image": "data/images/target_images/1/23.jpg",
+      "source_sha256": "a2a5f6d6e659771aa7a617a6d04c5084b6eaaec544c6404024f1132b04607278",
+      "target_sha256": "22f90383b61dcc86fb814130231b437c68337a486215946f4ecf7276a89acf26"
+    },
+    {
+      "index": 17,
+      "id": 24,
+      "source_image": "data/images/bigscale/nips17/24.png",
+      "target_image": "data/images/target_images/1/24.jpg",
+      "source_sha256": "6482a366ced13b4b2e654985b6f2f9d78ebed7ea85589f7eefd03e5c43e28cc9",
+      "target_sha256": "2a8dea4a8f91174a8ae5cd36f3b96ad7b3faa4a0197bd79298987ad73e8e0e14"
+    },
+    {
+      "index": 18,
+      "id": 25,
+      "source_image": "data/images/bigscale/nips17/25.png",
+      "target_image": "data/images/target_images/1/25.jpg",
+      "source_sha256": "737f12af0aa5c2f37d0229027652ffcadea006866ee85746a5f58b8aea5b701e",
+      "target_sha256": "8159f9d46b733e6225ffda64d2036e1416d72a00cb652258b2ee75246458ad21"
+    },
+    {
+      "index": 19,
+      "id": 26,
+      "source_image": "data/images/bigscale/nips17/26.png",
+      "target_image": "data/images/target_images/1/26.jpg",
+      "source_sha256": "d34343b5579b9ac5885ba0e13447a54c221e2c24d86c0ee034640f3b6184f667",
+      "target_sha256": "a1864784eba9f435f23bb24a5b777ac7ddaac7d0b80b7ddf49385f5232d9580d"
+    },
+    {
+      "index": 20,
+      "id": 27,
+      "source_image": "data/images/bigscale/nips17/27.png",
+      "target_image": "data/images/target_images/1/27.jpg",
+      "source_sha256": "42eda2f681b5bcd87f12250807d841842e1ba8d3d918b6e3d8b56f6144b3cdb2",
+      "target_sha256": "ac730e0462bcd370fab4f1da648750b3410decd0c5b799f76c47c80a16c128d5"
+    },
+    {
+      "index": 21,
+      "id": 28,
+      "source_image": "data/images/bigscale/nips17/28.png",
+      "target_image": "data/images/target_images/1/28.jpg",
+      "source_sha256": "ee44a54077ebb5ace6acb82eeb90b31ffae9291e7832aaf58f41ae57c79ac154",
+      "target_sha256": "3259d0c24109d1c366a9c6cc8c46afe9a7823c7720a294859b1053d341360bb8"
+    },
+    {
+      "index": 22,
+      "id": 29,
+      "source_image": "data/images/bigscale/nips17/29.png",
+      "target_image": "data/images/target_images/1/29.jpg",
+      "source_sha256": "e2fc4766bcd32f96aecb2e9b582386c024f8d58f7df3fd38e5ee7a39bbacfc1e",
+      "target_sha256": "04c974804f371c58556688ec8bb4b34f22946247a8c1a82e75b98d90572619ad"
+    },
+    {
+      "index": 23,
+      "id": 3,
+      "source_image": "data/images/bigscale/nips17/3.png",
+      "target_image": "data/images/target_images/1/3.jpg",
+      "source_sha256": "e0597fdc809d34993793ab95ee82f62661d56376c0d7224b03648750c3ada7ad",
+      "target_sha256": "66e53cac2386e6926d2e21eb1939fbc39dc5d3b972b902607c0379ebaf43d16f"
+    },
+    {
+      "index": 24,
+      "id": 30,
+      "source_image": "data/images/bigscale/nips17/30.png",
+      "target_image": "data/images/target_images/1/30.jpg",
+      "source_sha256": "4820374a429be7e0c03d341cf69c6e2f3261f0b07559d8ed5ebe462ec0aa78ad",
+      "target_sha256": "d554dd6c76b85cc008430c4d557ebe593ef9ed3af7b7dab4cbfb674fb3d2d52e"
+    },
+    {
+      "index": 25,
+      "id": 31,
+      "source_image": "data/images/bigscale/nips17/31.png",
+      "target_image": "data/images/target_images/1/31.jpg",
+      "source_sha256": "3b7c0ec8b67d563d21421b2e769dfc87cb0ca6b6c2a849e3edd699ad1d6888b0",
+      "target_sha256": "15d03731cbc2d01b368fceb3c896dd5362eab907a80d650ab6e571e3bcc21d05"
+    },
+    {
+      "index": 26,
+      "id": 32,
+      "source_image": "data/images/bigscale/nips17/32.png",
+      "target_image": "data/images/target_images/1/32.jpg",
+      "source_sha256": "dc5f0eecbff3b859e54524834ae727d86d5064f6be548ba8e9725cf13c6b991f",
+      "target_sha256": "5517ee7b380f3af0813c466e9deb46b091953dcfe4f8748c4e984170262de2a9"
+    },
+    {
+      "index": 27,
+      "id": 33,
+      "source_image": "data/images/bigscale/nips17/33.png",
+      "target_image": "data/images/target_images/1/33.jpg",
+      "source_sha256": "c33976852dadc79fb49eec0fc28d8345d3f4a79cf191a9a19f83bcd0fcac2dc5",
+      "target_sha256": "3797a268ad1d22ec4a3d98294e0db33316fa3d9f2b75f3c64492189eb8c912f9"
+    },
+    {
+      "index": 28,
+      "id": 34,
+      "source_image": "data/images/bigscale/nips17/34.png",
+      "target_image": "data/images/target_images/1/34.jpg",
+      "source_sha256": "59660ef5c644f5343c1da65c224dcf9a4b18813511ba2e517d492d17506aeef0",
+      "target_sha256": "65f6e069bb7b327891ea8609f5f148c5f3a0d789c5ac425af4674a8716c83861"
+    },
+    {
+      "index": 29,
+      "id": 35,
+      "source_image": "data/images/bigscale/nips17/35.png",
+      "target_image": "data/images/target_images/1/35.jpg",
+      "source_sha256": "e3dc9a36444b331fcbffd6e440570f62902171a8c878c6fad98824b703e39172",
+      "target_sha256": "bf4b43dbc437cdfe7611e9678d7de7c17d96dd3bf5943cba6fb7ea838cc32a8b"
+    },
+    {
+      "index": 30,
+      "id": 36,
+      "source_image": "data/images/bigscale/nips17/36.png",
+      "target_image": "data/images/target_images/1/36.jpg",
+      "source_sha256": "ee7e4b5f53e2d66c093a16588b338c18a33704002d27bffc1150c94bfafe77a4",
+      "target_sha256": "ed0c671b71f84c64f15a51ed4bc503918e81d741e702575eea8a6594fd2fc467"
+    },
+    {
+      "index": 31,
+      "id": 37,
+      "source_image": "data/images/bigscale/nips17/37.png",
+      "target_image": "data/images/target_images/1/37.jpg",
+      "source_sha256": "c0545b062184bc8c34a4fe505ca8084a67d5d1525a6fb6a0b953e986f5f05dba",
+      "target_sha256": "c68a5d059c46bace7d54b26cc878c92520904802fe13b001342358c1df30d543"
+    },
+    {
+      "index": 32,
+      "id": 38,
+      "source_image": "data/images/bigscale/nips17/38.png",
+      "target_image": "data/images/target_images/1/38.jpg",
+      "source_sha256": "27a90a9f8365ce107fa16b08012fa7d190efdb423baddb2ef05fce3d228d1b49",
+      "target_sha256": "b5dfee92a1dcd81b513eff95c771a1fe7c7d0cf0d327c42bba841a6961691f59"
+    },
+    {
+      "index": 33,
+      "id": 39,
+      "source_image": "data/images/bigscale/nips17/39.png",
+      "target_image": "data/images/target_images/1/39.jpg",
+      "source_sha256": "9a42cf1a5c0c64f879526bba18d5eff53c79d561c778e41fc00e0532530d4779",
+      "target_sha256": "c434ead88800bbc53c52123e28a04a8b54a49eb491fca30e7a05139eb4d290e6"
+    },
+    {
+      "index": 34,
+      "id": 4,
+      "source_image": "data/images/bigscale/nips17/4.png",
+      "target_image": "data/images/target_images/1/4.jpg",
+      "source_sha256": "5f607ae89f3cf42457b0f87d3a48393a4120160dbdf54c5f50a6bc392570bfbd",
+      "target_sha256": "eb10feb6400829fa1883e9917cb22bbde9e2716eb5d6700ae0b09ccff4d8c5ff"
+    },
+    {
+      "index": 35,
+      "id": 40,
+      "source_image": "data/images/bigscale/nips17/40.png",
+      "target_image": "data/images/target_images/1/40.jpg",
+      "source_sha256": "6a600a5fa0124c8dfddb1f7eb709596aaba2694f55331a28aa3b4d91cbaeef2e",
+      "target_sha256": "ebdde0bffc398ce6519cd0d2eadab6cdc29defed1f1c9b6e63c9a163319760b8"
+    },
+    {
+      "index": 36,
+      "id": 41,
+      "source_image": "data/images/bigscale/nips17/41.png",
+      "target_image": "data/images/target_images/1/41.jpg",
+      "source_sha256": "9c72f5f05f7cc72b68060514f0952d20eeb5a5983a43871f3cee640ae4d1a2aa",
+      "target_sha256": "a58776b09d34fb1c0072cbe1a01a20deb7f1c5dda0966369d1e6e4a5fec51757"
+    },
+    {
+      "index": 37,
+      "id": 42,
+      "source_image": "data/images/bigscale/nips17/42.png",
+      "target_image": "data/images/target_images/1/42.jpg",
+      "source_sha256": "b1d9dceafa5d5c207fa50065c172b75b2f2e7677820674ac237e5b5a420f6cf5",
+      "target_sha256": "5c71251326fb9ece01b5ce6334869861b3fce82eeb5cae45977e78e6332f4170"
+    },
+    {
+      "index": 38,
+      "id": 43,
+      "source_image": "data/images/bigscale/nips17/43.png",
+      "target_image": "data/images/target_images/1/43.jpg",
+      "source_sha256": "02ac2892a37064d9db1b97389434bdc05fe171682273dab2b53379e839605cb3",
+      "target_sha256": "936dab192ed5d35c41bc1f76eb4eef430c43320d90eb208c69e9ae907ad3d55e"
+    },
+    {
+      "index": 39,
+      "id": 44,
+      "source_image": "data/images/bigscale/nips17/44.png",
+      "target_image": "data/images/target_images/1/44.jpg",
+      "source_sha256": "1b743c1d0e3cae26e1435312a905c306a6da5866ceb5d52a7ddcd913d7eb4fc7",
+      "target_sha256": "4f71fe84699f1ba88d7f10c6dcc4623b7bf568975cfb248442f528c630550379"
+    },
+    {
+      "index": 40,
+      "id": 45,
+      "source_image": "data/images/bigscale/nips17/45.png",
+      "target_image": "data/images/target_images/1/45.jpg",
+      "source_sha256": "912f0cabf67463db1dcd684d80ab1ba35c694bce1825dad2900a7e4124f86eb4",
+      "target_sha256": "b96666c0487ac67caabb501f06b9b221a5f9ccd782fc64f409fb081f4294b93a"
+    },
+    {
+      "index": 41,
+      "id": 46,
+      "source_image": "data/images/bigscale/nips17/46.png",
+      "target_image": "data/images/target_images/1/46.jpg",
+      "source_sha256": "ee6e2141e243958da091fd01fe2848104ed86556708fc5369b84fc5ffa660f62",
+      "target_sha256": "f40f2fde0a740047b7d7f220ddede166aaf87adb062e22c05a663655f392b9c9"
+    },
+    {
+      "index": 42,
+      "id": 47,
+      "source_image": "data/images/bigscale/nips17/47.png",
+      "target_image": "data/images/target_images/1/47.jpg",
+      "source_sha256": "9183301b220cda93296b3776468a360e7889c7d46bc8837028cae2e4c61cb653",
+      "target_sha256": "3b38b89f264b2f2067d611e3f9d3d8f8e81cf9e913664b6c0510f4530e2bfb93"
+    },
+    {
+      "index": 43,
+      "id": 48,
+      "source_image": "data/images/bigscale/nips17/48.png",
+      "target_image": "data/images/target_images/1/48.jpg",
+      "source_sha256": "709662b6a88719387465cc44ba20b00df4785c9806e1515977e96a15e094faba",
+      "target_sha256": "51a4ac57291da05735d4f0a3e64e110035ec6c4cfb355a231b2b3bead4aa2c2e"
+    },
+    {
+      "index": 44,
+      "id": 49,
+      "source_image": "data/images/bigscale/nips17/49.png",
+      "target_image": "data/images/target_images/1/49.jpg",
+      "source_sha256": "a1bd36feaf70e6dc66a4c8bf3e78aa1fa11e6e395586789deeec82a11787d82e",
+      "target_sha256": "d7e731f0f8c681a90c404ad4de4ab9a5f34e03faa06462ba7a3e0628c8b1a782"
+    },
+    {
+      "index": 45,
+      "id": 5,
+      "source_image": "data/images/bigscale/nips17/5.png",
+      "target_image": "data/images/target_images/1/5.jpg",
+      "source_sha256": "f282a65e51baa5731d6a464255c9d930291252768dddf27103f34ebbe067bba5",
+      "target_sha256": "6dd2a48530e5f3ef61872edb9c8afa008b2d49c4e8b762161a4918e336137e99"
+    },
+    {
+      "index": 46,
+      "id": 50,
+      "source_image": "data/images/bigscale/nips17/50.png",
+      "target_image": "data/images/target_images/1/50.jpg",
+      "source_sha256": "b79719a66cda171124d935ddd4d6dc878b58898cc10a0fdb60c1644d48df3c47",
+      "target_sha256": "1066143317d4e32528cbf3fe8df790f3a8c02f8cdba6c5d2ecadad50fb03f73d"
+    },
+    {
+      "index": 47,
+      "id": 51,
+      "source_image": "data/images/bigscale/nips17/51.png",
+      "target_image": "data/images/target_images/1/51.jpg",
+      "source_sha256": "0f2a63757d8533bc6f9dd352ef824a246af7e9d82e64478cf363957a463a439b",
+      "target_sha256": "2b8e4f1577a924cc3592b611a3830091c4aad213a19d944a9c4f189c688961d1"
+    },
+    {
+      "index": 48,
+      "id": 52,
+      "source_image": "data/images/bigscale/nips17/52.png",
+      "target_image": "data/images/target_images/1/52.jpg",
+      "source_sha256": "c26201582e05fcef2f6da7b6e322ab0fcaf27cf76bc4676915a3327d85a086da",
+      "target_sha256": "5016c6c3ce6fc9b7b006db82eb880dcdad68eed2fafffd2becd824eb87a2aa6b"
+    },
+    {
+      "index": 49,
+      "id": 53,
+      "source_image": "data/images/bigscale/nips17/53.png",
+      "target_image": "data/images/target_images/1/53.jpg",
+      "source_sha256": "7669f295dff1f1280a0049d9960ac1b09a5d8b254ab65a1cdc2b743a9454c38b",
+      "target_sha256": "82e19234dfc8a85b5af69d985adc25e4bbcc63b874c965df4ae5298fe3f4a98b"
+    },
+    {
+      "index": 50,
+      "id": 54,
+      "source_image": "data/images/bigscale/nips17/54.png",
+      "target_image": "data/images/target_images/1/54.jpg",
+      "source_sha256": "ed8d89b443335376fcd038c7b85b8d2744eef4167c8b0a71187179239ff2cb82",
+      "target_sha256": "26b6e38f6a3fd28c6106b01637dcf2384ca4609dacb644fd2fbe98bbd6c36718"
+    },
+    {
+      "index": 51,
+      "id": 55,
+      "source_image": "data/images/bigscale/nips17/55.png",
+      "target_image": "data/images/target_images/1/55.jpg",
+      "source_sha256": "4fa941565212a95696f48f77e98b9f8f2f0501fda14108d0bcbc0af8a275d281",
+      "target_sha256": "9578f5c37c99f106ff17b796bc5c53f32a26994df714a1bb3e47b4d565947e3c"
+    },
+    {
+      "index": 52,
+      "id": 56,
+      "source_image": "data/images/bigscale/nips17/56.png",
+      "target_image": "data/images/target_images/1/56.jpg",
+      "source_sha256": "91a0326f3d3517f80a3507f4f629a24beabc496f15cc8256916ad21c7ccb3626",
+      "target_sha256": "0c89699ef0e01e4c5178038df20857dfae1c3463920763996e9e872e1c9c6fb6"
+    },
+    {
+      "index": 53,
+      "id": 57,
+      "source_image": "data/images/bigscale/nips17/57.png",
+      "target_image": "data/images/target_images/1/57.jpg",
+      "source_sha256": "efaa015cf5f6988cb0c8b1e4f6682540c89de4845e53a84a4916bcdd7865970f",
+      "target_sha256": "b38e5dd37eb99a64f9f0d78f5a5683ceb16f7b3c8b8cf107f2c9d6e0c5dc1d7d"
+    },
+    {
+      "index": 54,
+      "id": 58,
+      "source_image": "data/images/bigscale/nips17/58.png",
+      "target_image": "data/images/target_images/1/58.jpg",
+      "source_sha256": "9fc9e115cc71e2cd7a12d8923ecde326a2d832beba98aee6822678525b69ba2c",
+      "target_sha256": "c213ab6f0057eb107671923f623fcc5d59f771dcf1822071a0fe5b568cdc045b"
+    },
+    {
+      "index": 55,
+      "id": 59,
+      "source_image": "data/images/bigscale/nips17/59.png",
+      "target_image": "data/images/target_images/1/59.jpg",
+      "source_sha256": "7a76cd75808fbc4434efe7a4e45ae2b078f34eac8b32ce99e768ab0891437073",
+      "target_sha256": "3b44296d334b36ce291688eb31a6b8a31b0f28b6c4cd1f26b3ce10330a436b90"
+    },
+    {
+      "index": 56,
+      "id": 6,
+      "source_image": "data/images/bigscale/nips17/6.png",
+      "target_image": "data/images/target_images/1/6.jpg",
+      "source_sha256": "9d813b4581b1e2c0ab08e0562b2e79f255dbb1bb8fe391d83631a939b6e78005",
+      "target_sha256": "d69c29c7b230d237b7b8f9f8bc9e3b03634666285c5427b4ae1b23ae63d20209"
+    },
+    {
+      "index": 57,
+      "id": 60,
+      "source_image": "data/images/bigscale/nips17/60.png",
+      "target_image": "data/images/target_images/1/60.jpg",
+      "source_sha256": "0dc6fcedd9041778f90b7356c2e501428312a48742bbb0345ae1c9274a19ff3d",
+      "target_sha256": "cf6c38497366fe7984920a49edde8d09e376602a4c718a83e2431872b8402a66"
+    },
+    {
+      "index": 58,
+      "id": 61,
+      "source_image": "data/images/bigscale/nips17/61.png",
+      "target_image": "data/images/target_images/1/61.jpg",
+      "source_sha256": "e5cc14981eaf016a239d82877ce2dcfa2504504b1ff0542efe1503c7ed0a7a07",
+      "target_sha256": "14e7d47879771879ca2c156b13d1c7933399cb17d2d4a7291c99859e6c6a5908"
+    },
+    {
+      "index": 59,
+      "id": 62,
+      "source_image": "data/images/bigscale/nips17/62.png",
+      "target_image": "data/images/target_images/1/62.jpg",
+      "source_sha256": "bf30ff3c2c3b50a6c827560033a35f7d7b5747a9e08c6040b44335820f5605ce",
+      "target_sha256": "2bd8ca5b2d953d51f94abb77b4cb5b54a765062b37cfaa3062cd89a402338a45"
+    },
+    {
+      "index": 60,
+      "id": 63,
+      "source_image": "data/images/bigscale/nips17/63.png",
+      "target_image": "data/images/target_images/1/63.jpg",
+      "source_sha256": "c4fc3531fef0b3a126afbc2d33e4ce219028ad5a1d82bf5046dbc976573e4367",
+      "target_sha256": "043b199316007c8a6c8e1477eba3f227bf8ab4938a5070cf2156144327c7c17c"
+    },
+    {
+      "index": 61,
+      "id": 64,
+      "source_image": "data/images/bigscale/nips17/64.png",
+      "target_image": "data/images/target_images/1/64.jpg",
+      "source_sha256": "09a07fef8720cafe95fc7bdcb02e5b8e42d65065d26014d5101e9e966cf48a7b",
+      "target_sha256": "39e2f7a3b6fb596853c4eeee2aa57f3d95c25d59d0f6ba33bc01af0fabdf0f6a"
+    },
+    {
+      "index": 62,
+      "id": 65,
+      "source_image": "data/images/bigscale/nips17/65.png",
+      "target_image": "data/images/target_images/1/65.jpg",
+      "source_sha256": "f686f8cfaae6209ff5b7ae19f70a021cb254d1366517047557b943f891f4e859",
+      "target_sha256": "4c5a5fb3759d08a0d7431617d1ec1e8f48921cfcf83899f809dbffc59390001c"
+    },
+    {
+      "index": 63,
+      "id": 66,
+      "source_image": "data/images/bigscale/nips17/66.png",
+      "target_image": "data/images/target_images/1/66.jpg",
+      "source_sha256": "27ac49e6aa738e56eb4a11d802a8b9229197be9e5095af75f24dbb60d4a2bdde",
+      "target_sha256": "2ffd9e7e40f615edd868c006955875df0d6105c7a1e1c6a2b27c937ac0610fd6"
+    },
+    {
+      "index": 64,
+      "id": 67,
+      "source_image": "data/images/bigscale/nips17/67.png",
+      "target_image": "data/images/target_images/1/67.jpg",
+      "source_sha256": "f78447418740c9cec444018230f8132ac1b5d476a5cef010502749e8529164a4",
+      "target_sha256": "98a4b747843b9bca58c10d00a5fc2f5dbf7a1ff8a66affcd9412164528bdf761"
+    },
+    {
+      "index": 65,
+      "id": 68,
+      "source_image": "data/images/bigscale/nips17/68.png",
+      "target_image": "data/images/target_images/1/68.jpg",
+      "source_sha256": "27a71cdb691e11c3765e7fc95574ad68a79755cc012d87d457bba14a13949142",
+      "target_sha256": "4298ac1a86293cd2522020e583e0c3d7efde72b1eebe18ee378355a6a02e09c6"
+    },
+    {
+      "index": 66,
+      "id": 69,
+      "source_image": "data/images/bigscale/nips17/69.png",
+      "target_image": "data/images/target_images/1/69.jpg",
+      "source_sha256": "23f02e1693c98d1fd398b30056efe2987d1ed05cdfc0d90d2bbb489ab4b58aa7",
+      "target_sha256": "bb2676eb5b8fa8d070b98339ca3d91d7fb250fe441ad5efcc4f57ed52b4f0d45"
+    },
+    {
+      "index": 67,
+      "id": 7,
+      "source_image": "data/images/bigscale/nips17/7.png",
+      "target_image": "data/images/target_images/1/7.jpg",
+      "source_sha256": "2c449351e20ae587fa47a7c465265e5b464117e16f7e469d78f1f578a310d28d",
+      "target_sha256": "155eb025412931d8338b9ac1d5bd83ce24855594108c087423d2849fecfc7504"
+    },
+    {
+      "index": 68,
+      "id": 70,
+      "source_image": "data/images/bigscale/nips17/70.png",
+      "target_image": "data/images/target_images/1/70.jpg",
+      "source_sha256": "2a5b9549d1c6ca0d2894956bf3277538b31a420e06db361f94c78e0a628ba168",
+      "target_sha256": "dee20ce1ccf3e598adbc0282444d206b5f7d90d24ad476971f06b807021ed19b"
+    },
+    {
+      "index": 69,
+      "id": 71,
+      "source_image": "data/images/bigscale/nips17/71.png",
+      "target_image": "data/images/target_images/1/71.jpg",
+      "source_sha256": "2849084571fa5e7d288c29940dce0ea6760123d2d304818324e6c9dbc9c42f3a",
+      "target_sha256": "16c011baec3b0d9448e648a57e86b0e977e0ead33ab1862921cefcf24369321d"
+    },
+    {
+      "index": 70,
+      "id": 72,
+      "source_image": "data/images/bigscale/nips17/72.png",
+      "target_image": "data/images/target_images/1/72.jpg",
+      "source_sha256": "4d7ef106140b272244e57e7cb7bb0826191967cb6e931b1540db705f04e51546",
+      "target_sha256": "53cace08feb3c678c8f08730147b37a998439cfb4d86026c7e328432523d6285"
+    },
+    {
+      "index": 71,
+      "id": 73,
+      "source_image": "data/images/bigscale/nips17/73.png",
+      "target_image": "data/images/target_images/1/73.jpg",
+      "source_sha256": "e35a703b9c7a1809455f61328dde1c5853456089c4996eb80845c3caf841e02d",
+      "target_sha256": "837b4df5a954317c3f79640972f6522e0b58cd636497a2f0eaef35b981d400d6"
+    },
+    {
+      "index": 72,
+      "id": 74,
+      "source_image": "data/images/bigscale/nips17/74.png",
+      "target_image": "data/images/target_images/1/74.jpg",
+      "source_sha256": "4c590af2471b3adea8fd2b5f7900282d48f31a4e363d1adc00e712b9df4909c0",
+      "target_sha256": "d09b26a232f27abad7ed1106c95009f3232b424ceadcb2ca834f7ad0355f9353"
+    },
+    {
+      "index": 73,
+      "id": 75,
+      "source_image": "data/images/bigscale/nips17/75.png",
+      "target_image": "data/images/target_images/1/75.jpg",
+      "source_sha256": "ce37c2109be5d1868e87a87d2e90bae251693c83c3edcc07d1a12d1d7575c466",
+      "target_sha256": "fa3ec0fcf82b67a5b535b7a74af57a75f25d024b6f7aeddfd741cd198dfd0ff0"
+    },
+    {
+      "index": 74,
+      "id": 76,
+      "source_image": "data/images/bigscale/nips17/76.png",
+      "target_image": "data/images/target_images/1/76.jpg",
+      "source_sha256": "63a65e3e9ba7f07198d668469fa61c34e673fe897b6157421d47dda5d6751f5c",
+      "target_sha256": "e22c7db0a0f415a39284b2c617d76ce693084a68888aaa784f408b9accd6798c"
+    },
+    {
+      "index": 75,
+      "id": 77,
+      "source_image": "data/images/bigscale/nips17/77.png",
+      "target_image": "data/images/target_images/1/77.jpg",
+      "source_sha256": "2c75a3adbf8e565e58e9b5f1b3b10c50aa32d64e3ed0ff99c972b0944bf1c75f",
+      "target_sha256": "a46fe4379f6edc9e2d8652b0f929fe92851ff2b1c470c5fa355135323fa60774"
+    },
+    {
+      "index": 76,
+      "id": 78,
+      "source_image": "data/images/bigscale/nips17/78.png",
+      "target_image": "data/images/target_images/1/78.jpg",
+      "source_sha256": "2d22725b19aadc1243790e8fd6947bbeb36ea6f6d02fe7497d57f8ea865fd637",
+      "target_sha256": "84ee8f3834c5bcc4d48c4e73464d2b14bc5a9433c0acb3688f5147a2ab67ae03"
+    },
+    {
+      "index": 77,
+      "id": 79,
+      "source_image": "data/images/bigscale/nips17/79.png",
+      "target_image": "data/images/target_images/1/79.jpg",
+      "source_sha256": "5dfa3668bfaf03b0abacc4206d69afc3a1ec00c8ea13d9374f0f0df0e6a11665",
+      "target_sha256": "a65b21791bf3a4dacca03a5940159756fc3f6844f88c86738cfe21dc5f10512a"
+    },
+    {
+      "index": 78,
+      "id": 8,
+      "source_image": "data/images/bigscale/nips17/8.png",
+      "target_image": "data/images/target_images/1/8.jpg",
+      "source_sha256": "05b811a55e58159bc8a8f98f731d59a0209bed29fb7e0eac6e4e4805729f0abf",
+      "target_sha256": "66cd573a403ff3ef9c57d2b24c010f4645a51098616d691f61d10e237f7fd5ee"
+    },
+    {
+      "index": 79,
+      "id": 80,
+      "source_image": "data/images/bigscale/nips17/80.png",
+      "target_image": "data/images/target_images/1/80.jpg",
+      "source_sha256": "152a7f56b9ae02368f4fcddf2b697d053af73472024bec54bc6fdf06190d0d39",
+      "target_sha256": "8df7fef569050b40f8043d213d1891609d339b8a39deeac218e29c5987b90cdb"
+    },
+    {
+      "index": 80,
+      "id": 81,
+      "source_image": "data/images/bigscale/nips17/81.png",
+      "target_image": "data/images/target_images/1/81.jpg",
+      "source_sha256": "54b66fc240e0e4de3b9bf1472401ab7a54a91d6f5b16117058e91a39cf2b71e3",
+      "target_sha256": "7c41f9383f60a52c73f74a76b01fff6403548134febfa54dcbb28d2cf7c54011"
+    },
+    {
+      "index": 81,
+      "id": 82,
+      "source_image": "data/images/bigscale/nips17/82.png",
+      "target_image": "data/images/target_images/1/82.jpg",
+      "source_sha256": "6dd584f295a79819912d8a06d1ed5a64ce4e10da9844a79329b0ec46b9e4f5fc",
+      "target_sha256": "35e7eedd9c5058a3304ba2d439a2b2c7d2c910fbe06342305ccd28eb3d136ae8"
+    },
+    {
+      "index": 82,
+      "id": 83,
+      "source_image": "data/images/bigscale/nips17/83.png",
+      "target_image": "data/images/target_images/1/83.jpg",
+      "source_sha256": "4b4047616300ccedbeba71812087a2ec6c72c78918fb29618ad4ffd2ea4f069e",
+      "target_sha256": "affb760aefa8504b45bad41ed663fce0c9fe377c2d6cd2e8aa14450c85bbcc68"
+    },
+    {
+      "index": 83,
+      "id": 84,
+      "source_image": "data/images/bigscale/nips17/84.png",
+      "target_image": "data/images/target_images/1/84.jpg",
+      "source_sha256": "1961d39b1abe656ef8f718817965a1c1fd7135d0b5b0a486392d2f653e5d7054",
+      "target_sha256": "8922bfb03549a33a543fe6e6350f3dfe97171de0d861d87920ee43656a2d5e7b"
+    },
+    {
+      "index": 84,
+      "id": 85,
+      "source_image": "data/images/bigscale/nips17/85.png",
+      "target_image": "data/images/target_images/1/85.jpg",
+      "source_sha256": "13dc74e240bbb557c3e239c0a19953d872527ddc3faed9e9484e7cfe146af5ff",
+      "target_sha256": "ba64f9128e471a4e53ebd0a94cee014293a27f00dc3c3e75cb31470d2a64c390"
+    },
+    {
+      "index": 85,
+      "id": 86,
+      "source_image": "data/images/bigscale/nips17/86.png",
+      "target_image": "data/images/target_images/1/86.jpg",
+      "source_sha256": "1eb0727f124f5c673550064b69e4e1d3f632e9f23df3a7795b28febd47f5a6be",
+      "target_sha256": "2aa8dcef49d31f591c54eb77e70240b76d8d8e2f0f68d5a0eb3d547754fdbfe5"
+    },
+    {
+      "index": 86,
+      "id": 87,
+      "source_image": "data/images/bigscale/nips17/87.png",
+      "target_image": "data/images/target_images/1/87.jpg",
+      "source_sha256": "a03c89f3f2ba374ce3c179dab6c4cd87550cacd65a51960332737eca39299f20",
+      "target_sha256": "86c22b80eeb8036cb9113372a43d23c84e710b8ad2aacbdcafb38e43dd4af3ab"
+    },
+    {
+      "index": 87,
+      "id": 88,
+      "source_image": "data/images/bigscale/nips17/88.png",
+      "target_image": "data/images/target_images/1/88.jpg",
+      "source_sha256": "4b26725b3cb82dc6cdcf4a6606e55ca52171a4baf65cc120ef4673fec5d28b0c",
+      "target_sha256": "af15371bf710dd3b772f372b33fd231851c92490c639e30c53d2d783e53baa83"
+    },
+    {
+      "index": 88,
+      "id": 89,
+      "source_image": "data/images/bigscale/nips17/89.png",
+      "target_image": "data/images/target_images/1/89.jpg",
+      "source_sha256": "8e75ef0b4afb988c7eaf61508f5580e9beddb78916af2bc637ae928dac65a5ba",
+      "target_sha256": "235480efba46acdc84f8a7d6104121b2c11b867dc18a23632bf0be0ebd77affd"
+    },
+    {
+      "index": 89,
+      "id": 9,
+      "source_image": "data/images/bigscale/nips17/9.png",
+      "target_image": "data/images/target_images/1/9.jpg",
+      "source_sha256": "dfcd59d5c8e21164215bd5f45f9a44bde2f866a64b0c7070f8684b92cbe1ed7c",
+      "target_sha256": "4353717d541e8c4a799171a6199a9e10db2d84aa09f09cef2f45081ef7cab9dd"
+    },
+    {
+      "index": 90,
+      "id": 90,
+      "source_image": "data/images/bigscale/nips17/90.png",
+      "target_image": "data/images/target_images/1/90.jpg",
+      "source_sha256": "8eefe5d3df155cde614c0e61082923009f57fc5ed9f3a645b8e17841203dfa15",
+      "target_sha256": "adfe8356dd3fb0959960e7525ee2b88e35e82e7eae53628417bd2bfc8dcaf2f7"
+    },
+    {
+      "index": 91,
+      "id": 91,
+      "source_image": "data/images/bigscale/nips17/91.png",
+      "target_image": "data/images/target_images/1/91.jpg",
+      "source_sha256": "d3584be60c9c07d9e884e481b7226b7ec1d9c1d8b84793c4fcbac780040db141",
+      "target_sha256": "e2f3d25fe863016ebde4bc2f4aff6bc4471dd598e4f5fbce94861c8900124326"
+    },
+    {
+      "index": 92,
+      "id": 92,
+      "source_image": "data/images/bigscale/nips17/92.png",
+      "target_image": "data/images/target_images/1/92.jpg",
+      "source_sha256": "ca9526f8fc6f882774986bf635b9f4564a1bd291e134d26b519764988bb7c8fc",
+      "target_sha256": "d92cf1a9d7c5fad271cf740670899a61596b6c2a61ce23888228d53e1376da9a"
+    },
+    {
+      "index": 93,
+      "id": 93,
+      "source_image": "data/images/bigscale/nips17/93.png",
+      "target_image": "data/images/target_images/1/93.jpg",
+      "source_sha256": "c3137df258ad680c69a9229a0961ced36b14b82c9e7c9e5c629203a68cb7b50a",
+      "target_sha256": "071bd83ed6e500c5a1dac1bf3685c8f71980fef3813fde11bee706475526d6ef"
+    },
+    {
+      "index": 94,
+      "id": 94,
+      "source_image": "data/images/bigscale/nips17/94.png",
+      "target_image": "data/images/target_images/1/94.jpg",
+      "source_sha256": "fa6553d3f29e4e2eb7e971b145e762c22912cd3ae95782e56e3f41b1e8c2a6b1",
+      "target_sha256": "48ab799ee9221714e7e5124acd34c3a673c07be9d16575df34805217fa3c135a"
+    },
+    {
+      "index": 95,
+      "id": 95,
+      "source_image": "data/images/bigscale/nips17/95.png",
+      "target_image": "data/images/target_images/1/95.jpg",
+      "source_sha256": "08a17ec49a5a801b3e8c8515512316a2c90ba3d96924aca855d18df2130c496a",
+      "target_sha256": "2bd76c61e6272cfbdac45b74c9b4367640b6a9b967e6a1d749c09dce890269d1"
+    },
+    {
+      "index": 96,
+      "id": 96,
+      "source_image": "data/images/bigscale/nips17/96.png",
+      "target_image": "data/images/target_images/1/96.jpg",
+      "source_sha256": "549d1f40a48cb1be16764c8f95fadd226f2aed5a1dda18ce6a753b15c956965e",
+      "target_sha256": "017cd56baec19c22481ddf7f79dcc6290cebea1c275003f606364ae70aca4cec"
+    },
+    {
+      "index": 97,
+      "id": 97,
+      "source_image": "data/images/bigscale/nips17/97.png",
+      "target_image": "data/images/target_images/1/97.jpg",
+      "source_sha256": "225be91c435c59dce90a3bf2fc073e2f6a50f908eb6bc622e3a2b090ae393c67",
+      "target_sha256": "70b26408238ac8eac713155d0b822af9087f528580da2a61e7415efaa93c9d55"
+    },
+    {
+      "index": 98,
+      "id": 98,
+      "source_image": "data/images/bigscale/nips17/98.png",
+      "target_image": "data/images/target_images/1/98.jpg",
+      "source_sha256": "ee31c5a43e3b1e5e774295e88e226543b26871225cadd86128fbfdb1fee2c329",
+      "target_sha256": "83dc726660e853b6c76fac66952773f9dcfaa21093f00737f46268f9b1c5b4a1"
+    },
+    {
+      "index": 99,
+      "id": 99,
+      "source_image": "data/images/bigscale/nips17/99.png",
+      "target_image": "data/images/target_images/1/99.jpg",
+      "source_sha256": "90e515411d475134a4d0393dd3d8bd4d1d012966c5b099e782277a4da7eff4b2",
+      "target_sha256": "b51688c319649b030ed5e31e3bfa464834e86a1b5e1d46d06f57b677be76fba0"
+    }
+  ],
+  "clean_root": "data/images/bigscale",
+  "target_root": "data/images/target_images"
+}

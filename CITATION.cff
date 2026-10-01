@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use O-Attack, please cite the accompanying paper."
+type: software
+title: O-Attack
+authors:
+  - family-names: Nie
+    given-names: Sen
+  - family-names: Zhang
+    given-names: Jie
+  - family-names: Wang
+    given-names: Zhongqi
+  - family-names: Shan
+    given-names: Shiguang
+  - family-names: Chen
+    given-names: Xilin
+repository-code: "https://github.com/Summu77/O-Attack"
+url: "https://summu77.github.io/O-Attack/"
+preferred-citation:
+  type: article
+  title: "One Attack to Fool Them All: Highly Transferable Black-Box Adversarial Attacks on Frontier MLLMs"
+  authors:
+    - family-names: Nie
+      given-names: Sen
+    - family-names: Zhang
+      given-names: Jie
+    - family-names: Wang
+      given-names: Zhongqi
+    - family-names: Shan
+      given-names: Shiguang
+    - family-names: Chen
+      given-names: Xilin
+  year: 2026
+  journal: arXiv
+  url: "https://arxiv.org/abs/2609.33833"

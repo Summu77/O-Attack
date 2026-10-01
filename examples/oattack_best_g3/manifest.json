@@ -1,0 +1,1084 @@
+{
+  "schema_version": 1,
+  "description": "Historical G3 adversarial examples, copied without regeneration or recompression",
+  "num_images": 100,
+  "attack_config": "configs/attack/default.yaml",
+  "dataset_manifest": "data/manifest.json",
+  "source_caption_sha256": "b9ac7afaf8fcce8d406484852c1492de3eb9aef5f97cad6d3bcf3f5eaceb1b07",
+  "target_caption_sha256": "b2b161a697d381e2ef7d2dd052e78178cd2ebdac3f487e37c18da082dff4d909",
+  "settings": {
+    "seed": 2023,
+    "model": {
+      "ensemble": true,
+      "backbones": [
+        "Laion",
+        "B16",
+        "B32"
+      ],
+      "input_res": 224,
+      "cls_last_k": 4,
+      "multi_device_strategy": "model_parallel",
+      "stochastic_proxy": true,
+      "attention_dropout": 0.15,
+      "ffn_dropout": 0.15,
+      "attention_dropout_min": 0.05,
+      "ffn_dropout_min": 0.05,
+      "attention_dropout_max": 0.15,
+      "ffn_dropout_max": 0.15,
+      "dropout_schedule": true,
+      "dropout_sample_per_forward": true,
+      "backbone_overrides": {
+        "Laion": {
+          "cls_last_k": 15,
+          "attention_dropout_min": 0.1,
+          "ffn_dropout_min": 0.1,
+          "attention_dropout_max": 0.15,
+          "ffn_dropout_max": 0.15,
+          "attention_dropout": 0.15,
+          "ffn_dropout": 0.15
+        },
+        "B16": {
+          "cls_last_k": 4,
+          "attention_dropout_min": 0.05,
+          "ffn_dropout_min": 0.05,
+          "attention_dropout_max": 0.1,
+          "ffn_dropout_max": 0.1,
+          "attention_dropout": 0.1,
+          "ffn_dropout": 0.1
+        },
+        "B32": {
+          "cls_last_k": 4,
+          "attention_dropout_min": 0.05,
+          "ffn_dropout_min": 0.05,
+          "attention_dropout_max": 0.1,
+          "ffn_dropout_max": 0.1,
+          "attention_dropout": 0.1,
+          "ffn_dropout": 0.1
+        }
+      }
+    },
+    "optim": {
+      "attack": "oattack_pgd",
+      "target_type": "image",
+      "steps": 300,
+      "alpha": 1.0,
+      "epsilon": 16,
+      "source_aug_crops": 10,
+      "source_aug_aggregation": "mean",
+      "source_aug_execution": "batched",
+      "grad_mask_alpha": 0.0
+    },
+    "augmentation": {
+      "source": [
+        {
+          "type": "random_resized_crop",
+          "size": 224,
+          "scale": [
+            0.55,
+            0.95
+          ]
+        }
+      ],
+      "target": [
+        {
+          "type": "random_resized_crop",
+          "size": 224,
+          "scale": [
+            0.9,
+            1.0
+          ]
+        }
+      ]
+    },
+    "text_objective": {
+      "enabled": true,
+      "alpha": 1.0,
+      "text_last_k": 2,
+      "mix_beta_min": 0.0,
+      "mix_beta_max": 1.0,
+      "attention_dropout_min": 0.05,
+      "attention_dropout_max": 0.15,
+      "ffn_dropout_min": 0.05,
+      "ffn_dropout_max": 0.15,
+      "mix_mode": "pair",
+      "source_caption_json": "data/text/bigscale/nips17/caption.json",
+      "target_caption_json": "data/text/target_images/1/caption.json",
+      "backbone_overrides": {
+        "Laion": {
+          "text_last_k": 5,
+          "attention_dropout_min": 0.1,
+          "attention_dropout_max": 0.15,
+          "ffn_dropout_min": 0.1,
+          "ffn_dropout_max": 0.15,
+          "attention_dropout": 0.15,
+          "ffn_dropout": 0.15
+        },
+        "B16": {
+          "text_last_k": 2,
+          "attention_dropout_min": 0.05,
+          "attention_dropout_max": 0.1,
+          "ffn_dropout_min": 0.05,
+          "ffn_dropout_max": 0.1,
+          "attention_dropout": 0.1,
+          "ffn_dropout": 0.1
+        },
+        "B32": {
+          "text_last_k": 2,
+          "attention_dropout_min": 0.05,
+          "attention_dropout_max": 0.1,
+          "ffn_dropout_min": 0.05,
+          "ffn_dropout_max": 0.1,
+          "attention_dropout": 0.1,
+          "ffn_dropout": 0.1
+        }
+      },
+      "attention_dropout": 0.15,
+      "ffn_dropout": 0.15
+    },
+    "oattack_objective": {
+      "visual_variance_weight": 1.0,
+      "text_variance_weight": 1.0,
+      "aggregation_mode": "per_model_layeravg_textpooled",
+      "variance_mode": "subtract"
+    }
+  },
+  "runs": [
+    {
+      "sample_start": 0,
+      "num_samples": 25,
+      "seed": 2023,
+      "run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "created_at": "2026-07-21T10:37:50",
+      "device": "cuda:0,cuda:1"
+    },
+    {
+      "sample_start": 25,
+      "num_samples": 25,
+      "seed": 2023,
+      "run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "created_at": "2026-07-21T10:37:50",
+      "device": "cuda:0,cuda:1"
+    },
+    {
+      "sample_start": 50,
+      "num_samples": 25,
+      "seed": 2023,
+      "run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "created_at": "2026-07-21T10:37:50",
+      "device": "cuda:0,cuda:1"
+    },
+    {
+      "sample_start": 75,
+      "num_samples": 25,
+      "seed": 2023,
+      "run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "created_at": "2026-07-21T10:37:50",
+      "device": "cuda:0,cuda:1"
+    }
+  ],
+  "linf_pixel_limit": 16,
+  "source_preprocessing": "RGB; bicubic Resize(shorter edge=224); CenterCrop(224); [0,255] pixel units",
+  "reproduction_note": "Each of the four 25-image runs reset seed 2023. A single 100-image run uses the same optimization settings but a different random-number trajectory after the first chunk.",
+  "images": [
+    {
+      "index": 0,
+      "id": 0,
+      "adversarial_image": "examples/oattack_best_g3/nips17/0.png",
+      "source_image": "data/images/bigscale/nips17/0.png",
+      "target_image": "data/images/target_images/1/0.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "99bd6afd6a632146e5cb8f929fd3e7276f830e363aeda94080d2c750e6e7baa0"
+    },
+    {
+      "index": 1,
+      "id": 1,
+      "adversarial_image": "examples/oattack_best_g3/nips17/1.png",
+      "source_image": "data/images/bigscale/nips17/1.png",
+      "target_image": "data/images/target_images/1/1.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "cd489840225b1d44ca02c92865a164a386444bd68811b8d31376c2ec567a15d8"
+    },
+    {
+      "index": 2,
+      "id": 10,
+      "adversarial_image": "examples/oattack_best_g3/nips17/10.png",
+      "source_image": "data/images/bigscale/nips17/10.png",
+      "target_image": "data/images/target_images/1/10.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "d670410bb020b90210cac0d0d255d77719432268562f7a6cfc750ef8746be25c"
+    },
+    {
+      "index": 3,
+      "id": 11,
+      "adversarial_image": "examples/oattack_best_g3/nips17/11.png",
+      "source_image": "data/images/bigscale/nips17/11.png",
+      "target_image": "data/images/target_images/1/11.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "27c7725f25695a6503dc84909e085ba2ae167f767a830061aa2bf879a7a037e7"
+    },
+    {
+      "index": 4,
+      "id": 12,
+      "adversarial_image": "examples/oattack_best_g3/nips17/12.png",
+      "source_image": "data/images/bigscale/nips17/12.png",
+      "target_image": "data/images/target_images/1/12.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "ae45d72ad690add0aeee9e73374268f5bd18a271b5e98b1e5505fb274952c616"
+    },
+    {
+      "index": 5,
+      "id": 13,
+      "adversarial_image": "examples/oattack_best_g3/nips17/13.png",
+      "source_image": "data/images/bigscale/nips17/13.png",
+      "target_image": "data/images/target_images/1/13.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "f93eef0393400548221975a844618795893bf099ab2d9ab4bff9d77a941b49aa"
+    },
+    {
+      "index": 6,
+      "id": 14,
+      "adversarial_image": "examples/oattack_best_g3/nips17/14.png",
+      "source_image": "data/images/bigscale/nips17/14.png",
+      "target_image": "data/images/target_images/1/14.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "5cf83fb4178db288c3ee0b40e5d9dd90b2f69cc084e85903bf88e5cb85cf78cf"
+    },
+    {
+      "index": 7,
+      "id": 15,
+      "adversarial_image": "examples/oattack_best_g3/nips17/15.png",
+      "source_image": "data/images/bigscale/nips17/15.png",
+      "target_image": "data/images/target_images/1/15.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "1d7816b913df9fd2d316892e3ec5b20334ce76d611f3e53284ba4fbe9caf395f"
+    },
+    {
+      "index": 8,
+      "id": 16,
+      "adversarial_image": "examples/oattack_best_g3/nips17/16.png",
+      "source_image": "data/images/bigscale/nips17/16.png",
+      "target_image": "data/images/target_images/1/16.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "bd62a876f83e2dd54e4f6deba89766ccb2528f5bd539bee00762ec093b4137f6"
+    },
+    {
+      "index": 9,
+      "id": 17,
+      "adversarial_image": "examples/oattack_best_g3/nips17/17.png",
+      "source_image": "data/images/bigscale/nips17/17.png",
+      "target_image": "data/images/target_images/1/17.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "8ec4cf63187015a58532b1afef5d213230e32d308cb57dd78737f574b207b759"
+    },
+    {
+      "index": 10,
+      "id": 18,
+      "adversarial_image": "examples/oattack_best_g3/nips17/18.png",
+      "source_image": "data/images/bigscale/nips17/18.png",
+      "target_image": "data/images/target_images/1/18.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "374adfb2a011a6d4cbba1e01bdba5326149f9587781d7593df0c942f41cfad38"
+    },
+    {
+      "index": 11,
+      "id": 19,
+      "adversarial_image": "examples/oattack_best_g3/nips17/19.png",
+      "source_image": "data/images/bigscale/nips17/19.png",
+      "target_image": "data/images/target_images/1/19.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "2655f82068cab01cec5f1f89d810cef5cc14d3808f3ba77e4f6da5047a887518"
+    },
+    {
+      "index": 12,
+      "id": 2,
+      "adversarial_image": "examples/oattack_best_g3/nips17/2.png",
+      "source_image": "data/images/bigscale/nips17/2.png",
+      "target_image": "data/images/target_images/1/2.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "5ed11b42d15cfd18c7f6653ae285b92f0d12b364d1a639c2918f00ebbe6cbcfa"
+    },
+    {
+      "index": 13,
+      "id": 20,
+      "adversarial_image": "examples/oattack_best_g3/nips17/20.png",
+      "source_image": "data/images/bigscale/nips17/20.png",
+      "target_image": "data/images/target_images/1/20.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "948680cf4c630eb934fd61f913c2128bc4e914a4943cbf2e63ac68fb41ada366"
+    },
+    {
+      "index": 14,
+      "id": 21,
+      "adversarial_image": "examples/oattack_best_g3/nips17/21.png",
+      "source_image": "data/images/bigscale/nips17/21.png",
+      "target_image": "data/images/target_images/1/21.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "b8f8ab6cac3517ec234e53be4b01ed2af9a8724e73ea0fcdfee65deb2df744ea"
+    },
+    {
+      "index": 15,
+      "id": 22,
+      "adversarial_image": "examples/oattack_best_g3/nips17/22.png",
+      "source_image": "data/images/bigscale/nips17/22.png",
+      "target_image": "data/images/target_images/1/22.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "76587d9be8c57afdf3f3962a0b2b444a31d4c656f3db397ba83f90441e3fbb5d"
+    },
+    {
+      "index": 16,
+      "id": 23,
+      "adversarial_image": "examples/oattack_best_g3/nips17/23.png",
+      "source_image": "data/images/bigscale/nips17/23.png",
+      "target_image": "data/images/target_images/1/23.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "27dcaf52e2d9377e7e4fef3f4b901f403ed45024effd903f17d655b42a7dccc5"
+    },
+    {
+      "index": 17,
+      "id": 24,
+      "adversarial_image": "examples/oattack_best_g3/nips17/24.png",
+      "source_image": "data/images/bigscale/nips17/24.png",
+      "target_image": "data/images/target_images/1/24.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "96e85224d7a073b851cb0425cd79a15c588477bdc54a27da2f9b446f4e7724ba"
+    },
+    {
+      "index": 18,
+      "id": 25,
+      "adversarial_image": "examples/oattack_best_g3/nips17/25.png",
+      "source_image": "data/images/bigscale/nips17/25.png",
+      "target_image": "data/images/target_images/1/25.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "3406350342534209eabe4e9bc92d415572eb3b9ac6a67d9fa962be93c4c9c56c"
+    },
+    {
+      "index": 19,
+      "id": 26,
+      "adversarial_image": "examples/oattack_best_g3/nips17/26.png",
+      "source_image": "data/images/bigscale/nips17/26.png",
+      "target_image": "data/images/target_images/1/26.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "103e959bbad82a9dc2ecf3ba11eac8e98c1ec78cd2b99753df0cb5e24184881c"
+    },
+    {
+      "index": 20,
+      "id": 27,
+      "adversarial_image": "examples/oattack_best_g3/nips17/27.png",
+      "source_image": "data/images/bigscale/nips17/27.png",
+      "target_image": "data/images/target_images/1/27.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "9f2aafa8a0fd0d3453ebce30978229d017507e1b49995f0c52ae03330ca1e72a"
+    },
+    {
+      "index": 21,
+      "id": 28,
+      "adversarial_image": "examples/oattack_best_g3/nips17/28.png",
+      "source_image": "data/images/bigscale/nips17/28.png",
+      "target_image": "data/images/target_images/1/28.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "1164b1aa1be9ae8b9e444f30874dcda84c9ba358c5fe559f66069c74fb7f9fdf"
+    },
+    {
+      "index": 22,
+      "id": 29,
+      "adversarial_image": "examples/oattack_best_g3/nips17/29.png",
+      "source_image": "data/images/bigscale/nips17/29.png",
+      "target_image": "data/images/target_images/1/29.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "e2f9437b57ee2ecae37b67c36cb69e8e4a18e8c6f3411a5c5d54a2d40109b02a"
+    },
+    {
+      "index": 23,
+      "id": 3,
+      "adversarial_image": "examples/oattack_best_g3/nips17/3.png",
+      "source_image": "data/images/bigscale/nips17/3.png",
+      "target_image": "data/images/target_images/1/3.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "d537851c4403987d68ef976484b67a3cd08259bf902f8733abb2c43a19a074fa"
+    },
+    {
+      "index": 24,
+      "id": 30,
+      "adversarial_image": "examples/oattack_best_g3/nips17/30.png",
+      "source_image": "data/images/bigscale/nips17/30.png",
+      "target_image": "data/images/target_images/1/30.jpg",
+      "generation_run_hash": "8e20418df2bb4470aba0c2069ddc78df",
+      "adversarial_sha256": "b78f3c0d5ec834a95b9f386f3525f6f437d34333204e80e2f829a33425b33559"
+    },
+    {
+      "index": 25,
+      "id": 31,
+      "adversarial_image": "examples/oattack_best_g3/nips17/31.png",
+      "source_image": "data/images/bigscale/nips17/31.png",
+      "target_image": "data/images/target_images/1/31.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "8124769e215af207a33d355fba6859288fa7fd2374c2fd6fd630ebcfc506aa64"
+    },
+    {
+      "index": 26,
+      "id": 32,
+      "adversarial_image": "examples/oattack_best_g3/nips17/32.png",
+      "source_image": "data/images/bigscale/nips17/32.png",
+      "target_image": "data/images/target_images/1/32.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "72ffce3764c5e27f7ea00c8b6572f7e6f026a1d80de8a1c1749783388d066423"
+    },
+    {
+      "index": 27,
+      "id": 33,
+      "adversarial_image": "examples/oattack_best_g3/nips17/33.png",
+      "source_image": "data/images/bigscale/nips17/33.png",
+      "target_image": "data/images/target_images/1/33.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "79fbaef76614b08a5626a8e4536a9c779fd4901861e86250ca932750031f4279"
+    },
+    {
+      "index": 28,
+      "id": 34,
+      "adversarial_image": "examples/oattack_best_g3/nips17/34.png",
+      "source_image": "data/images/bigscale/nips17/34.png",
+      "target_image": "data/images/target_images/1/34.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "47209b64148d85e9e02a6e1879df31a8eb79eda867a16e3d6aef48015d999af3"
+    },
+    {
+      "index": 29,
+      "id": 35,
+      "adversarial_image": "examples/oattack_best_g3/nips17/35.png",
+      "source_image": "data/images/bigscale/nips17/35.png",
+      "target_image": "data/images/target_images/1/35.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "ddb43268ab916b407dbb2870723b585e8588cdfaa53d012ae8ac5e8f0dedf02e"
+    },
+    {
+      "index": 30,
+      "id": 36,
+      "adversarial_image": "examples/oattack_best_g3/nips17/36.png",
+      "source_image": "data/images/bigscale/nips17/36.png",
+      "target_image": "data/images/target_images/1/36.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "dd73f0e4ea70891c99b8121f1281dabec4c11250e4db6e5af43db3914318df2b"
+    },
+    {
+      "index": 31,
+      "id": 37,
+      "adversarial_image": "examples/oattack_best_g3/nips17/37.png",
+      "source_image": "data/images/bigscale/nips17/37.png",
+      "target_image": "data/images/target_images/1/37.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "d5309a441d684546d8a4a6d93e0894a543008ad5ae78da0acec8d5ea05645e75"
+    },
+    {
+      "index": 32,
+      "id": 38,
+      "adversarial_image": "examples/oattack_best_g3/nips17/38.png",
+      "source_image": "data/images/bigscale/nips17/38.png",
+      "target_image": "data/images/target_images/1/38.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "a6cb740c696f6c5caadcb8f56ed1a8ed186e939b164e2987908fd298666bc02d"
+    },
+    {
+      "index": 33,
+      "id": 39,
+      "adversarial_image": "examples/oattack_best_g3/nips17/39.png",
+      "source_image": "data/images/bigscale/nips17/39.png",
+      "target_image": "data/images/target_images/1/39.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "13b9457f978186d43b34942a51ee85e7d7657ef70a515dedb885b781df33b21f"
+    },
+    {
+      "index": 34,
+      "id": 4,
+      "adversarial_image": "examples/oattack_best_g3/nips17/4.png",
+      "source_image": "data/images/bigscale/nips17/4.png",
+      "target_image": "data/images/target_images/1/4.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "3adbc2ee2972c4844a426df59af695f6b2f7b9360632d2362cfeed1cdfac4136"
+    },
+    {
+      "index": 35,
+      "id": 40,
+      "adversarial_image": "examples/oattack_best_g3/nips17/40.png",
+      "source_image": "data/images/bigscale/nips17/40.png",
+      "target_image": "data/images/target_images/1/40.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "fc9b3f50fc3f496e666ebde8f9a2362ffdbf110a6a4aaab6a4b9fc638d2f6811"
+    },
+    {
+      "index": 36,
+      "id": 41,
+      "adversarial_image": "examples/oattack_best_g3/nips17/41.png",
+      "source_image": "data/images/bigscale/nips17/41.png",
+      "target_image": "data/images/target_images/1/41.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "0ea9aa5552f1cb41c1ec95996ba01cc2a2a6eb0281cddcc38e3eb1c1e1e6131c"
+    },
+    {
+      "index": 37,
+      "id": 42,
+      "adversarial_image": "examples/oattack_best_g3/nips17/42.png",
+      "source_image": "data/images/bigscale/nips17/42.png",
+      "target_image": "data/images/target_images/1/42.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "e53752970156b2652f767fc92cbcc1d5b337689b6406f9aa7976b03f097b61db"
+    },
+    {
+      "index": 38,
+      "id": 43,
+      "adversarial_image": "examples/oattack_best_g3/nips17/43.png",
+      "source_image": "data/images/bigscale/nips17/43.png",
+      "target_image": "data/images/target_images/1/43.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "93d6a279ace470185bd26e711bad9b4e86dce579caf635bfd668b4c319ddd8d0"
+    },
+    {
+      "index": 39,
+      "id": 44,
+      "adversarial_image": "examples/oattack_best_g3/nips17/44.png",
+      "source_image": "data/images/bigscale/nips17/44.png",
+      "target_image": "data/images/target_images/1/44.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "bca3c8d99c6533f12d7bb10eca4f0b06047fd108b879ce420eacc74521719556"
+    },
+    {
+      "index": 40,
+      "id": 45,
+      "adversarial_image": "examples/oattack_best_g3/nips17/45.png",
+      "source_image": "data/images/bigscale/nips17/45.png",
+      "target_image": "data/images/target_images/1/45.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "71aec727e449f40b23b0dc06c040e80d840f58ec94b4add73f79a501f8b2cfa7"
+    },
+    {
+      "index": 41,
+      "id": 46,
+      "adversarial_image": "examples/oattack_best_g3/nips17/46.png",
+      "source_image": "data/images/bigscale/nips17/46.png",
+      "target_image": "data/images/target_images/1/46.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "8bcf12e79a1cfd8c609331ef6ab20f729328853fbb8366aeeab3829291ff5c19"
+    },
+    {
+      "index": 42,
+      "id": 47,
+      "adversarial_image": "examples/oattack_best_g3/nips17/47.png",
+      "source_image": "data/images/bigscale/nips17/47.png",
+      "target_image": "data/images/target_images/1/47.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "4d51bddcc27064cd982deba92aea2a884c1f6ae20cb314155596d542e2ea4580"
+    },
+    {
+      "index": 43,
+      "id": 48,
+      "adversarial_image": "examples/oattack_best_g3/nips17/48.png",
+      "source_image": "data/images/bigscale/nips17/48.png",
+      "target_image": "data/images/target_images/1/48.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "dbd07c759657ec96a9aa61727d25fdabc644d378f58403b574e28b799879dfa4"
+    },
+    {
+      "index": 44,
+      "id": 49,
+      "adversarial_image": "examples/oattack_best_g3/nips17/49.png",
+      "source_image": "data/images/bigscale/nips17/49.png",
+      "target_image": "data/images/target_images/1/49.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "caa277e59bd6eeabf7b338fada8ed5bc422cf452360ba1264ad55d0ff8f98b0d"
+    },
+    {
+      "index": 45,
+      "id": 5,
+      "adversarial_image": "examples/oattack_best_g3/nips17/5.png",
+      "source_image": "data/images/bigscale/nips17/5.png",
+      "target_image": "data/images/target_images/1/5.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "2044eaaa10a53682407cfd4cf35f4076855e5529a627b2f5c02269542a9e4271"
+    },
+    {
+      "index": 46,
+      "id": 50,
+      "adversarial_image": "examples/oattack_best_g3/nips17/50.png",
+      "source_image": "data/images/bigscale/nips17/50.png",
+      "target_image": "data/images/target_images/1/50.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "762fe1d4b69c3e85d292f828e40c5ebb94e04a712ed4fa3000a411c9500ff6e2"
+    },
+    {
+      "index": 47,
+      "id": 51,
+      "adversarial_image": "examples/oattack_best_g3/nips17/51.png",
+      "source_image": "data/images/bigscale/nips17/51.png",
+      "target_image": "data/images/target_images/1/51.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "8ba3068aae168e33fecbece2babd96d80a22380a1e9007077f1b328d0e503f4a"
+    },
+    {
+      "index": 48,
+      "id": 52,
+      "adversarial_image": "examples/oattack_best_g3/nips17/52.png",
+      "source_image": "data/images/bigscale/nips17/52.png",
+      "target_image": "data/images/target_images/1/52.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "54e1791f94614c7a62408b6bfc86d336d69f1f7ec76a3c9afc0c7bdb10b77a5a"
+    },
+    {
+      "index": 49,
+      "id": 53,
+      "adversarial_image": "examples/oattack_best_g3/nips17/53.png",
+      "source_image": "data/images/bigscale/nips17/53.png",
+      "target_image": "data/images/target_images/1/53.jpg",
+      "generation_run_hash": "d2c873d7f8e5adeed0087e7805464389",
+      "adversarial_sha256": "522374f0e1d61831ea27bea54b63e4409209534e4bff8bf73d3da7c6c370ec65"
+    },
+    {
+      "index": 50,
+      "id": 54,
+      "adversarial_image": "examples/oattack_best_g3/nips17/54.png",
+      "source_image": "data/images/bigscale/nips17/54.png",
+      "target_image": "data/images/target_images/1/54.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "110f4d42778378e75e25fe71558fba3936940cc1a17c0e0c63ccb1b82d06953b"
+    },
+    {
+      "index": 51,
+      "id": 55,
+      "adversarial_image": "examples/oattack_best_g3/nips17/55.png",
+      "source_image": "data/images/bigscale/nips17/55.png",
+      "target_image": "data/images/target_images/1/55.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "ebab9f88546497e0941abf6189c9e8e46e77f5ede1d97fd9649e995f0d15d64e"
+    },
+    {
+      "index": 52,
+      "id": 56,
+      "adversarial_image": "examples/oattack_best_g3/nips17/56.png",
+      "source_image": "data/images/bigscale/nips17/56.png",
+      "target_image": "data/images/target_images/1/56.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "2b77079e887f1eaaad15747825b6203c8495d0781fd88aa324e0832e5f1bd152"
+    },
+    {
+      "index": 53,
+      "id": 57,
+      "adversarial_image": "examples/oattack_best_g3/nips17/57.png",
+      "source_image": "data/images/bigscale/nips17/57.png",
+      "target_image": "data/images/target_images/1/57.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "3a8d48210f4a20cac4f40ebb17118f84878e0c9606ae40c2b5fbea45213147e1"
+    },
+    {
+      "index": 54,
+      "id": 58,
+      "adversarial_image": "examples/oattack_best_g3/nips17/58.png",
+      "source_image": "data/images/bigscale/nips17/58.png",
+      "target_image": "data/images/target_images/1/58.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "fc6020e5248346604b3cab0aaf342c593324bb03ceb0e74e6e01bff50a3eabf0"
+    },
+    {
+      "index": 55,
+      "id": 59,
+      "adversarial_image": "examples/oattack_best_g3/nips17/59.png",
+      "source_image": "data/images/bigscale/nips17/59.png",
+      "target_image": "data/images/target_images/1/59.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "6d5c8cf5bb8350aeb450efe69703fadcbb1eec8482eefd6504d2cb4a17f4fb20"
+    },
+    {
+      "index": 56,
+      "id": 6,
+      "adversarial_image": "examples/oattack_best_g3/nips17/6.png",
+      "source_image": "data/images/bigscale/nips17/6.png",
+      "target_image": "data/images/target_images/1/6.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "0e56f00bec689fba3afc43afb2d57484e20d6ee91d94404c5e08edeb3a6ce28e"
+    },
+    {
+      "index": 57,
+      "id": 60,
+      "adversarial_image": "examples/oattack_best_g3/nips17/60.png",
+      "source_image": "data/images/bigscale/nips17/60.png",
+      "target_image": "data/images/target_images/1/60.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "da2c65d558648f0dabec907260545b80c7a7545682c163ddea6d06940ba258af"
+    },
+    {
+      "index": 58,
+      "id": 61,
+      "adversarial_image": "examples/oattack_best_g3/nips17/61.png",
+      "source_image": "data/images/bigscale/nips17/61.png",
+      "target_image": "data/images/target_images/1/61.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "a09f5c427d3aee58e060691358da26b49c756af470189042606fbc1ac63c56c8"
+    },
+    {
+      "index": 59,
+      "id": 62,
+      "adversarial_image": "examples/oattack_best_g3/nips17/62.png",
+      "source_image": "data/images/bigscale/nips17/62.png",
+      "target_image": "data/images/target_images/1/62.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "7c6c3082c48ff0b6a8d4dbd48bfb2f3ba1d6d366385019502ecfa5cc7dd01855"
+    },
+    {
+      "index": 60,
+      "id": 63,
+      "adversarial_image": "examples/oattack_best_g3/nips17/63.png",
+      "source_image": "data/images/bigscale/nips17/63.png",
+      "target_image": "data/images/target_images/1/63.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "89bc132f460a23ba70d0f750a839ca36914b92f8102f988ec10110f8872068a1"
+    },
+    {
+      "index": 61,
+      "id": 64,
+      "adversarial_image": "examples/oattack_best_g3/nips17/64.png",
+      "source_image": "data/images/bigscale/nips17/64.png",
+      "target_image": "data/images/target_images/1/64.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "b160593734c86bf6eedea95491d4c9e361bf4d26addbef4c39cde8ca0bb47762"
+    },
+    {
+      "index": 62,
+      "id": 65,
+      "adversarial_image": "examples/oattack_best_g3/nips17/65.png",
+      "source_image": "data/images/bigscale/nips17/65.png",
+      "target_image": "data/images/target_images/1/65.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "17108329b549a6b4ec32467127d5a98885f72eae0f82d84cae52359853b84763"
+    },
+    {
+      "index": 63,
+      "id": 66,
+      "adversarial_image": "examples/oattack_best_g3/nips17/66.png",
+      "source_image": "data/images/bigscale/nips17/66.png",
+      "target_image": "data/images/target_images/1/66.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "f46126c979a4361f102bae0bd771d6e383e460203a4f8bcc007ba276b2d275f5"
+    },
+    {
+      "index": 64,
+      "id": 67,
+      "adversarial_image": "examples/oattack_best_g3/nips17/67.png",
+      "source_image": "data/images/bigscale/nips17/67.png",
+      "target_image": "data/images/target_images/1/67.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "12a35f4dfcd9714a1a983142c3bc89c380f93a2369e44dd88f67b16d1c05f350"
+    },
+    {
+      "index": 65,
+      "id": 68,
+      "adversarial_image": "examples/oattack_best_g3/nips17/68.png",
+      "source_image": "data/images/bigscale/nips17/68.png",
+      "target_image": "data/images/target_images/1/68.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "18652a78ee675dbb367af69bca9b6ca1a3fc178094f1613ba1da92530d9e3e47"
+    },
+    {
+      "index": 66,
+      "id": 69,
+      "adversarial_image": "examples/oattack_best_g3/nips17/69.png",
+      "source_image": "data/images/bigscale/nips17/69.png",
+      "target_image": "data/images/target_images/1/69.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "daa8f606bf0d8f448857edda4564c9275cb16324bd797b1758d1474f46cf006c"
+    },
+    {
+      "index": 67,
+      "id": 7,
+      "adversarial_image": "examples/oattack_best_g3/nips17/7.png",
+      "source_image": "data/images/bigscale/nips17/7.png",
+      "target_image": "data/images/target_images/1/7.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "e8747c81ded0641a5e60a5a618aa4e0653c26229be0ffbcd85f0ef27d8afcd4d"
+    },
+    {
+      "index": 68,
+      "id": 70,
+      "adversarial_image": "examples/oattack_best_g3/nips17/70.png",
+      "source_image": "data/images/bigscale/nips17/70.png",
+      "target_image": "data/images/target_images/1/70.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "9cf6771605914555dca16103c1c762774796b9979d28b7530175021d4fc504d7"
+    },
+    {
+      "index": 69,
+      "id": 71,
+      "adversarial_image": "examples/oattack_best_g3/nips17/71.png",
+      "source_image": "data/images/bigscale/nips17/71.png",
+      "target_image": "data/images/target_images/1/71.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "cef6a2ddf69cc6a02f2305300e0d50ecc3490bde7bcdfb7fbc05f392ffbb8127"
+    },
+    {
+      "index": 70,
+      "id": 72,
+      "adversarial_image": "examples/oattack_best_g3/nips17/72.png",
+      "source_image": "data/images/bigscale/nips17/72.png",
+      "target_image": "data/images/target_images/1/72.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "14164955a771190d1cfbeda8d08b311194043c92a6764e26e2d6b69117be56e6"
+    },
+    {
+      "index": 71,
+      "id": 73,
+      "adversarial_image": "examples/oattack_best_g3/nips17/73.png",
+      "source_image": "data/images/bigscale/nips17/73.png",
+      "target_image": "data/images/target_images/1/73.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "dfda08cb256403de24f7cc322d82845ce0cfe732849fe5e70e92952d9c1daed9"
+    },
+    {
+      "index": 72,
+      "id": 74,
+      "adversarial_image": "examples/oattack_best_g3/nips17/74.png",
+      "source_image": "data/images/bigscale/nips17/74.png",
+      "target_image": "data/images/target_images/1/74.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "1267a8b62d5871f07427fa1f664a9ba329addd4d7a98715ad449c54f35e661bb"
+    },
+    {
+      "index": 73,
+      "id": 75,
+      "adversarial_image": "examples/oattack_best_g3/nips17/75.png",
+      "source_image": "data/images/bigscale/nips17/75.png",
+      "target_image": "data/images/target_images/1/75.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "86bdecb00b12ccd489aba3eecdf8591ab016f7dda1b0054f513370371df987a2"
+    },
+    {
+      "index": 74,
+      "id": 76,
+      "adversarial_image": "examples/oattack_best_g3/nips17/76.png",
+      "source_image": "data/images/bigscale/nips17/76.png",
+      "target_image": "data/images/target_images/1/76.jpg",
+      "generation_run_hash": "42da8f81bf049ac7671bcc323fe3be70",
+      "adversarial_sha256": "0cae4a4a69a93ae0df968c42c4cb2fbde660eae3915c40d1d6710106db1ae12a"
+    },
+    {
+      "index": 75,
+      "id": 77,
+      "adversarial_image": "examples/oattack_best_g3/nips17/77.png",
+      "source_image": "data/images/bigscale/nips17/77.png",
+      "target_image": "data/images/target_images/1/77.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "12a9b5d1b63fa76bed673ac4fed7d0cee7a838cff1046d4c1518bb32bbb073c7"
+    },
+    {
+      "index": 76,
+      "id": 78,
+      "adversarial_image": "examples/oattack_best_g3/nips17/78.png",
+      "source_image": "data/images/bigscale/nips17/78.png",
+      "target_image": "data/images/target_images/1/78.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "baecdba82f0a248609acc9fcaf0baabff9dcab6ed410c9696a60466c0e85d7c0"
+    },
+    {
+      "index": 77,
+      "id": 79,
+      "adversarial_image": "examples/oattack_best_g3/nips17/79.png",
+      "source_image": "data/images/bigscale/nips17/79.png",
+      "target_image": "data/images/target_images/1/79.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "55a252bcbe3c6602ece649c306bc630bf5827c081661b5e894eb17059c8e7cf1"
+    },
+    {
+      "index": 78,
+      "id": 8,
+      "adversarial_image": "examples/oattack_best_g3/nips17/8.png",
+      "source_image": "data/images/bigscale/nips17/8.png",
+      "target_image": "data/images/target_images/1/8.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "6c3b9444d29299f2f4ecf84d53716cf6aced84af57ef4405ae6509331186e38d"
+    },
+    {
+      "index": 79,
+      "id": 80,
+      "adversarial_image": "examples/oattack_best_g3/nips17/80.png",
+      "source_image": "data/images/bigscale/nips17/80.png",
+      "target_image": "data/images/target_images/1/80.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "ab338d87886ee4250d7991f683c5c4d7db6fd9bac8db7ab3b9ab5e3e297dee47"
+    },
+    {
+      "index": 80,
+      "id": 81,
+      "adversarial_image": "examples/oattack_best_g3/nips17/81.png",
+      "source_image": "data/images/bigscale/nips17/81.png",
+      "target_image": "data/images/target_images/1/81.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "a4c85e45c01b2d873a33cf5dd5e3eb2ca26b590d5ee0eb2fa35d0f4d5b5ed0f5"
+    },
+    {
+      "index": 81,
+      "id": 82,
+      "adversarial_image": "examples/oattack_best_g3/nips17/82.png",
+      "source_image": "data/images/bigscale/nips17/82.png",
+      "target_image": "data/images/target_images/1/82.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "e6053f94d0927aaa9c08e692490d975a5fa6eeadaf3c9bdadf3548ec717c89c4"
+    },
+    {
+      "index": 82,
+      "id": 83,
+      "adversarial_image": "examples/oattack_best_g3/nips17/83.png",
+      "source_image": "data/images/bigscale/nips17/83.png",
+      "target_image": "data/images/target_images/1/83.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "c55829e9ec915bd2a0ecdc186e7b4d07bce812e92efd62d5f55b6d1842b1365b"
+    },
+    {
+      "index": 83,
+      "id": 84,
+      "adversarial_image": "examples/oattack_best_g3/nips17/84.png",
+      "source_image": "data/images/bigscale/nips17/84.png",
+      "target_image": "data/images/target_images/1/84.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "2256d9791d92d3124acd55425c903ccdd62da613ea5407eea30952d43fc2352f"
+    },
+    {
+      "index": 84,
+      "id": 85,
+      "adversarial_image": "examples/oattack_best_g3/nips17/85.png",
+      "source_image": "data/images/bigscale/nips17/85.png",
+      "target_image": "data/images/target_images/1/85.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "d199f886282109c9a165de57c2715bb54ff8737cea3a03920a79c8f8fe96c147"
+    },
+    {
+      "index": 85,
+      "id": 86,
+      "adversarial_image": "examples/oattack_best_g3/nips17/86.png",
+      "source_image": "data/images/bigscale/nips17/86.png",
+      "target_image": "data/images/target_images/1/86.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "f9f63acf753f7d09bf2889d4ff640f459072282d0a580c8318f68b853fe7709a"
+    },
+    {
+      "index": 86,
+      "id": 87,
+      "adversarial_image": "examples/oattack_best_g3/nips17/87.png",
+      "source_image": "data/images/bigscale/nips17/87.png",
+      "target_image": "data/images/target_images/1/87.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "20a20bc1176fe995f6bb4dee648cb61016ea3bc701ba6625aa82ad76625405af"
+    },
+    {
+      "index": 87,
+      "id": 88,
+      "adversarial_image": "examples/oattack_best_g3/nips17/88.png",
+      "source_image": "data/images/bigscale/nips17/88.png",
+      "target_image": "data/images/target_images/1/88.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "9ec41b8cff998ec90f6c2c92d22aeba6c49dca8091f2c5f6d36ca3186b7b2709"
+    },
+    {
+      "index": 88,
+      "id": 89,
+      "adversarial_image": "examples/oattack_best_g3/nips17/89.png",
+      "source_image": "data/images/bigscale/nips17/89.png",
+      "target_image": "data/images/target_images/1/89.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "eb91e6e987cd0ca59ec60b8d9efff5e2d19c8b68e28a02e6e9af5c1b6d130695"
+    },
+    {
+      "index": 89,
+      "id": 9,
+      "adversarial_image": "examples/oattack_best_g3/nips17/9.png",
+      "source_image": "data/images/bigscale/nips17/9.png",
+      "target_image": "data/images/target_images/1/9.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "034bfbfaf04b647bead86d7d6030f10663d06ac2af736ffeb2dd4de47b0a8ad3"
+    },
+    {
+      "index": 90,
+      "id": 90,
+      "adversarial_image": "examples/oattack_best_g3/nips17/90.png",
+      "source_image": "data/images/bigscale/nips17/90.png",
+      "target_image": "data/images/target_images/1/90.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "99831b0c623ecadb33322a62f4204f04b5a0739a587265985d32033b3a7930fc"
+    },
+    {
+      "index": 91,
+      "id": 91,
+      "adversarial_image": "examples/oattack_best_g3/nips17/91.png",
+      "source_image": "data/images/bigscale/nips17/91.png",
+      "target_image": "data/images/target_images/1/91.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "211a0404ad0f983e715ccfce2ebbc2e9ffa1782ff1d5dcee4ea15b5618c88d29"
+    },
+    {
+      "index": 92,
+      "id": 92,
+      "adversarial_image": "examples/oattack_best_g3/nips17/92.png",
+      "source_image": "data/images/bigscale/nips17/92.png",
+      "target_image": "data/images/target_images/1/92.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "388212ab561b8ec45757839bac3c896ef3edbd379707aa666531f6782cee499c"
+    },
+    {
+      "index": 93,
+      "id": 93,
+      "adversarial_image": "examples/oattack_best_g3/nips17/93.png",
+      "source_image": "data/images/bigscale/nips17/93.png",
+      "target_image": "data/images/target_images/1/93.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "3cb35af7001594dbd24bf17ca21212a0716d3300cd37efaad1b5b813fb733fa7"
+    },
+    {
+      "index": 94,
+      "id": 94,
+      "adversarial_image": "examples/oattack_best_g3/nips17/94.png",
+      "source_image": "data/images/bigscale/nips17/94.png",
+      "target_image": "data/images/target_images/1/94.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "8ec2b389fd7f8d756812cfa131dde7900f53148f78154de79043ecfa35ce4d39"
+    },
+    {
+      "index": 95,
+      "id": 95,
+      "adversarial_image": "examples/oattack_best_g3/nips17/95.png",
+      "source_image": "data/images/bigscale/nips17/95.png",
+      "target_image": "data/images/target_images/1/95.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "7b4b1a51911f526dac59a6088f703343283327ebf84a7eb41f42b82ab0551d27"
+    },
+    {
+      "index": 96,
+      "id": 96,
+      "adversarial_image": "examples/oattack_best_g3/nips17/96.png",
+      "source_image": "data/images/bigscale/nips17/96.png",
+      "target_image": "data/images/target_images/1/96.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "6cba4d349069ae570c32d1e267a7b0fd72f3c8f05ef5e43f2b4934354a8435d5"
+    },
+    {
+      "index": 97,
+      "id": 97,
+      "adversarial_image": "examples/oattack_best_g3/nips17/97.png",
+      "source_image": "data/images/bigscale/nips17/97.png",
+      "target_image": "data/images/target_images/1/97.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "b6a70f0ef383f86c5e00946e5d206e3dcd79f382c0329666691ae953ea40e9cf"
+    },
+    {
+      "index": 98,
+      "id": 98,
+      "adversarial_image": "examples/oattack_best_g3/nips17/98.png",
+      "source_image": "data/images/bigscale/nips17/98.png",
+      "target_image": "data/images/target_images/1/98.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "b3073b1b376f5afd8c948494328092df8739b99e0e4b4e8ef9b8e4a07a7e83d3"
+    },
+    {
+      "index": 99,
+      "id": 99,
+      "adversarial_image": "examples/oattack_best_g3/nips17/99.png",
+      "source_image": "data/images/bigscale/nips17/99.png",
+      "target_image": "data/images/target_images/1/99.jpg",
+      "generation_run_hash": "4fedce3c1b92b34a1b55fabc0ea0fd06",
+      "adversarial_sha256": "e37dfbf8f266ef25a3d9c831161e0ad3413170ae9f582581dd3e262086aba609"
+    }
+  ]
+}

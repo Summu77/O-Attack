@@ -1,0 +1,15 @@
+{
+  "default": "glm5",
+  "judges": {
+    "glm5": {
+      "display_name": "GLM-5",
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "model_id": "z-ai/glm-5",
+      "paper_model_id": "z-ai/glm-5",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "sleep": 0.1,
+      "trust_env_proxy": false,
+      "disable_reasoning": true
+    }
+  }
+}

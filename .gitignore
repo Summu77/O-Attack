@@ -1,3 +1,12 @@
-# Keep locally compiled manuscripts out of the repository.
+outputs/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.venv*/
+.DS_Store
+
+# Preserve the project-page repository exclusions.
 main.pdf
 docs/assets/o-attack-paper.pdf
